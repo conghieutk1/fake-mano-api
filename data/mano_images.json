@@ -1,0 +1,52 @@
+[
+  {
+    "id": "img-backend-v1",
+    "name": "vht-backend",
+    "provider": "VHT",
+    "version": "1.2.3",
+    "createdAt": "2026-05-10T08:00:00.000Z",
+    "size": 536870912,
+    "imageUsageStateType": "IN_USE",
+    "description": "Backend API service image for VSM"
+  },
+  {
+    "id": "img-frontend-v1",
+    "name": "vht-frontend",
+    "provider": "VHT",
+    "version": "1.0.1",
+    "createdAt": "2026-05-05T08:00:00.000Z",
+    "size": 134217728,
+    "imageUsageStateType": "IN_USE",
+    "description": "Frontend UI service image for VSM"
+  },
+  {
+    "id": "img-ims-core-v2",
+    "name": "vht-ims-core",
+    "provider": "VHT",
+    "version": "2.1.0",
+    "createdAt": "2026-05-13T08:00:00.000Z",
+    "size": 2147483648,
+    "imageUsageStateType": "IN_USE",
+    "description": "IMS Core - Call Session Control Function"
+  },
+  {
+    "id": "img-upf-worker-v3",
+    "name": "vht-upf-worker",
+    "provider": "VHT",
+    "version": "3.0.1",
+    "createdAt": "2026-05-15T08:00:00.000Z",
+    "size": 1073741824,
+    "imageUsageStateType": "IN_USE",
+    "description": "UPF Packet Engine with DPDK support"
+  },
+  {
+    "id": "img-hss-db-v3",
+    "name": "vht-hss-db",
+    "provider": "VHT",
+    "version": "3.2.0",
+    "createdAt": "2026-04-15T08:00:00.000Z",
+    "size": 4294967296,
+    "imageUsageStateType": "IN_USE",
+    "description": "HSS Oracle Database Image"
+  }
+]

@@ -1,0 +1,207 @@
+{
+  "vnfd-vht-001": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-backend", "name": "Backend VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-backend", "minNumberOfInstance": 1, "maxNumberOfInstance": 3 },
+        "imageInfos": [{ "id": "img-backend-v1", "name": "vht-backend", "version": "1.2.3" }]
+      },
+      {
+        "vdu": { "vduId": "vdu-frontend", "name": "Frontend VDU", "priority": 2 },
+        "vduProfile": { "vduId": "vdu-frontend", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-frontend-v1", "name": "vht-frontend", "version": "1.0.1" }]
+      }
+    ]
+  },
+  "vnfd-ims-002": {
+    "deploymentFlavourId": "premium",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-cscf", "name": "CSCF VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-cscf", "minNumberOfInstance": 2, "maxNumberOfInstance": 5 },
+        "imageInfos": [{ "id": "img-ims-core-v2", "name": "vht-ims-core", "version": "2.1.0" }]
+      }
+    ]
+  },
+  "vnfd-upf-003": {
+    "deploymentFlavourId": "high-performance",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-worker", "name": "UPF Worker VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-worker", "minNumberOfInstance": 3, "maxNumberOfInstance": 10 },
+        "imageInfos": [{ "id": "img-upf-worker-v3", "name": "vht-upf-worker", "version": "3.0.1" }]
+      }
+    ]
+  },
+  "vnfd-hss-004": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-database", "name": "HSS Database VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-database", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-hss-db-v3", "name": "vht-hss-db", "version": "3.2.0" }]
+      }
+    ]
+  },
+  "vnfd-smf-005": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-ctrl", "name": "Control Plane VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-ctrl", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-smf-v5", "name": "vht-smf", "version": "5.0.1" }]
+      }
+    ]
+  },
+  "vnfd-amf-006": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-main", "name": "AMF Main VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-main", "minNumberOfInstance": 2, "maxNumberOfInstance": 4 },
+        "imageInfos": [{ "id": "img-amf-v5", "name": "vht-amf", "version": "5.1.0" }]
+      }
+    ]
+  },
+  "vnfd-udm-007": {
+    "deploymentFlavourId": "premium",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-db", "name": "UDM DB VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-db", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-udm-v4", "name": "vht-udm", "version": "4.2.0" }]
+      }
+    ]
+  },
+  "vnfd-ausf-008": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-auth", "name": "Auth VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-auth", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-ausf-v1", "name": "vht-ausf", "version": "1.1.2" }]
+      }
+    ]
+  },
+  "vnfd-nrf-009": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-registry", "name": "Registry VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-registry", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-nrf-v2", "name": "vht-nrf", "version": "2.0.0" }]
+      }
+    ]
+  },
+  "vnfd-pcf-010": {
+    "deploymentFlavourId": "premium",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-policy", "name": "Policy Engine VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-policy", "minNumberOfInstance": 2, "maxNumberOfInstance": 6 },
+        "imageInfos": [{ "id": "img-pcf-v3", "name": "vht-pcf", "version": "3.1.5" }]
+      }
+    ]
+  },
+  "vnfd-billing-011": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-app", "name": "Billing App VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-app", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-billing-v10", "name": "vht-billing", "version": "10.2.1" }]
+      }
+    ]
+  },
+  "vnfd-ocs-012": {
+    "deploymentFlavourId": "high-performance",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-engine", "name": "OCS Engine VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-engine", "minNumberOfInstance": 4, "maxNumberOfInstance": 12 },
+        "imageInfos": [{ "id": "img-ocs-v8", "name": "vht-ocs", "version": "8.5.0" }]
+      }
+    ]
+  },
+  "vnfd-pcrf-013": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-ctrl", "name": "PCRF Control VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-ctrl", "minNumberOfInstance": 1, "maxNumberOfInstance": 3 },
+        "imageInfos": [{ "id": "img-pcrf-v7", "name": "vht-pcrf", "version": "7.2.1" }]
+      }
+    ]
+  },
+  "vnfd-dras-014": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-analyzer", "name": "Analyzer VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-analyzer", "minNumberOfInstance": 1, "maxNumberOfInstance": 5 },
+        "imageInfos": [{ "id": "img-dras-v1", "name": "vht-dras", "version": "1.5.0" }]
+      }
+    ]
+  },
+  "vnfd-msc-015": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-switch", "name": "MSC Switch VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-switch", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-msc-v12", "name": "vht-msc", "version": "12.0.0" }]
+      }
+    ]
+  },
+  "vnfd-hlr-016": {
+    "deploymentFlavourId": "premium",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-db", "name": "HLR DB VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-db", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
+        "imageInfos": [{ "id": "img-hlr-v9", "name": "vht-hlr", "version": "9.1.0" }]
+      }
+    ]
+  },
+  "vnfd-sgw-017": {
+    "deploymentFlavourId": "high-performance",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-gw", "name": "SGW Gateway VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-gw", "minNumberOfInstance": 2, "maxNumberOfInstance": 8 },
+        "imageInfos": [{ "id": "img-sgw-v4", "name": "vht-sgw", "version": "4.5.2" }]
+      }
+    ]
+  },
+  "vnfd-pgw-018": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-ctrl", "name": "PGW Control VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-ctrl", "minNumberOfInstance": 1, "maxNumberOfInstance": 3 },
+        "imageInfos": [{ "id": "img-pgw-v4", "name": "vht-pgw", "version": "4.6.0" }]
+      }
+    ]
+  },
+  "vnfd-smsc-019": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-msg", "name": "SMS Message VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-msg", "minNumberOfInstance": 1, "maxNumberOfInstance": 4 },
+        "imageInfos": [{ "id": "img-smsc-v3", "name": "vht-smsc", "version": "3.3.0" }]
+      }
+    ]
+  },
+  "vnfd-mme-020": {
+    "deploymentFlavourId": "standard",
+    "vduInfos": [
+      {
+        "vdu": { "vduId": "vdu-core", "name": "MME Core VDU", "priority": 1 },
+        "vduProfile": { "vduId": "vdu-core", "minNumberOfInstance": 2, "maxNumberOfInstance": 6 },
+        "imageInfos": [{ "id": "img-mme-v6", "name": "vht-mme", "version": "6.1.1" }]
+      }
+    ]
+  }
+}

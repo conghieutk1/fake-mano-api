@@ -1,0 +1,52 @@
+[
+  {
+    "id": "cm-001",
+    "name": "api-config",
+    "version": "v1.0",
+    "provider": "VHT",
+    "createTime": "2026-05-10T08:00:00.000Z",
+    "updateTime": "2026-05-13T08:00:00.000Z",
+    "usageState": "IN_USE",
+    "size": 2048
+  },
+  {
+    "id": "cm-002",
+    "name": "ui-theme",
+    "version": "v2",
+    "provider": "VHT",
+    "createTime": "2026-05-05T08:00:00.000Z",
+    "updateTime": "2026-05-14T08:00:00.000Z",
+    "usageState": "IN_USE",
+    "size": 5120
+  },
+  {
+    "id": "cm-003",
+    "name": "cscf-params",
+    "version": "v2.1",
+    "provider": "VHT",
+    "createTime": "2026-05-12T08:00:00.000Z",
+    "updateTime": "2026-05-12T08:00:00.000Z",
+    "usageState": "IN_USE",
+    "size": 15360
+  },
+  {
+    "id": "cm-004",
+    "name": "upf-dpdk-conf",
+    "version": "v3",
+    "provider": "VHT",
+    "createTime": "2026-05-15T08:00:00.000Z",
+    "updateTime": "2026-05-15T08:00:00.000Z",
+    "usageState": "IN_USE",
+    "size": 1024
+  },
+  {
+    "id": "cm-005",
+    "name": "hss-db-init",
+    "version": "v1.1",
+    "provider": "VHT",
+    "createTime": "2026-04-30T08:00:00.000Z",
+    "updateTime": "2026-04-30T08:00:00.000Z",
+    "usageState": "IN_USE",
+    "size": 40960
+  }
+]

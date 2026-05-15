@@ -1,0 +1,385 @@
+[
+  {
+    "id": "vnf-instance-001",
+    "vnfInstanceName": "vht-vsm-production",
+    "vnfInstanceDescription": "VHT VSM Main Production Instance",
+    "vnfdId": "vnfd-vht-001",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-vsm",
+    "vnfSoftwareVersion": "1.2.3",
+    "vnfdVersion": "1.2.3",
+    "vnfPkgId": "pkg-vht-001",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [
+        { "id": "vnfc-001", "vduId": "vdu-backend", "vnfcState": "STARTED" },
+        { "id": "vnfc-002", "vduId": "vdu-frontend", "vnfcState": "STARTED" }
+      ]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-002",
+    "vnfInstanceName": "vht-ims-core",
+    "vnfInstanceDescription": "IP Multimedia Subsystem Core",
+    "vnfdId": "vnfd-ims-002",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-ims",
+    "vnfSoftwareVersion": "2.1.0",
+    "vnfdVersion": "2.1.0",
+    "vnfPkgId": "pkg-ims-002",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "premium",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-101", "vduId": "vdu-cscf", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-003",
+    "vnfInstanceName": "vht-upf-node-01",
+    "vnfInstanceDescription": "User Plane Function Node 01",
+    "vnfdId": "vnfd-upf-003",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-upf",
+    "vnfSoftwareVersion": "3.0.1",
+    "vnfdVersion": "3.0.0",
+    "vnfPkgId": "pkg-upf-003",
+    "vimId": "vim-002",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "high-performance",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-201", "vduId": "vdu-worker", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-004",
+    "vnfInstanceName": "vht-hss-v3",
+    "vnfInstanceDescription": "Home Subscriber Server v3",
+    "vnfdId": "vnfd-hss-004",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-hss",
+    "vnfSoftwareVersion": "3.2.0",
+    "vnfdVersion": "3.2.0",
+    "vnfPkgId": "pkg-hss-004",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-301", "vduId": "vdu-database", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-005",
+    "vnfInstanceName": "vht-smf-5g-01",
+    "vnfInstanceDescription": "Session Management Function",
+    "vnfdId": "vnfd-smf-005",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-smf",
+    "vnfSoftwareVersion": "5.0.1",
+    "vnfdVersion": "5.0.1",
+    "vnfPkgId": "pkg-smf-005",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-501", "vduId": "vdu-ctrl", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-006",
+    "vnfInstanceName": "vht-amf-5g-01",
+    "vnfInstanceDescription": "Access Management Function",
+    "vnfdId": "vnfd-amf-006",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-amf",
+    "vnfSoftwareVersion": "5.1.0",
+    "vnfdVersion": "5.1.0",
+    "vnfPkgId": "pkg-amf-006",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-601", "vduId": "vdu-main", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-007",
+    "vnfInstanceName": "vht-udm-5g-01",
+    "vnfInstanceDescription": "Unified Data Management",
+    "vnfdId": "vnfd-udm-007",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-udm",
+    "vnfSoftwareVersion": "4.2.0",
+    "vnfdVersion": "4.2.0",
+    "vnfPkgId": "pkg-udm-007",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "premium",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-701", "vduId": "vdu-db", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-008",
+    "vnfInstanceName": "vht-ausf-5g-01",
+    "vnfInstanceDescription": "Authentication Server Function",
+    "vnfdId": "vnfd-ausf-008",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-ausf",
+    "vnfSoftwareVersion": "1.1.2",
+    "vnfdVersion": "1.1.2",
+    "vnfPkgId": "pkg-ausf-008",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-801", "vduId": "vdu-auth", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-009",
+    "vnfInstanceName": "vht-nrf-5g-01",
+    "vnfInstanceDescription": "Network Repository Function",
+    "vnfdId": "vnfd-nrf-009",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-nrf",
+    "vnfSoftwareVersion": "2.0.0",
+    "vnfdVersion": "2.0.0",
+    "vnfPkgId": "pkg-nrf-009",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-901", "vduId": "vdu-registry", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-010",
+    "vnfInstanceName": "vht-pcf-5g-01",
+    "vnfInstanceDescription": "Policy Control Function",
+    "vnfdId": "vnfd-pcf-010",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-pcf",
+    "vnfSoftwareVersion": "3.1.5",
+    "vnfdVersion": "3.1.5",
+    "vnfPkgId": "pkg-pcf-010",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "premium",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1001", "vduId": "vdu-policy", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-011",
+    "vnfInstanceName": "vht-vpro-billing",
+    "vnfInstanceDescription": "VPRO Billing System",
+    "vnfdId": "vnfd-billing-011",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-vpro",
+    "vnfSoftwareVersion": "10.2.1",
+    "vnfdVersion": "10.2.0",
+    "vnfPkgId": "pkg-billing-011",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1101", "vduId": "vdu-app", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-012",
+    "vnfInstanceName": "vht-ocs-node-01",
+    "vnfInstanceDescription": "Online Charging System",
+    "vnfdId": "vnfd-ocs-012",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-ocs",
+    "vnfSoftwareVersion": "8.5.0",
+    "vnfdVersion": "8.5.0",
+    "vnfPkgId": "pkg-ocs-012",
+    "vimId": "vim-002",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "high-performance",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1201", "vduId": "vdu-engine", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-013",
+    "vnfInstanceName": "vht-pcrf-core",
+    "vnfInstanceDescription": "Policy and Charging Rules Function",
+    "vnfdId": "vnfd-pcrf-013",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-pcrf",
+    "vnfSoftwareVersion": "7.2.1",
+    "vnfdVersion": "7.2.1",
+    "vnfPkgId": "pkg-pcrf-013",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1301", "vduId": "vdu-ctrl", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-014",
+    "vnfInstanceName": "vht-dras-alert",
+    "vnfInstanceDescription": "Data Retention and Analysis System",
+    "vnfdId": "vnfd-dras-014",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-dras",
+    "vnfSoftwareVersion": "1.5.0",
+    "vnfdVersion": "1.5.0",
+    "vnfPkgId": "pkg-dras-014",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1401", "vduId": "vdu-analyzer", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-015",
+    "vnfInstanceName": "vht-msc-gateway",
+    "vnfInstanceDescription": "Mobile Switching Center Gateway",
+    "vnfdId": "vnfd-msc-015",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-msc",
+    "vnfSoftwareVersion": "12.0.0",
+    "vnfdVersion": "12.0.0",
+    "vnfPkgId": "pkg-msc-015",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1501", "vduId": "vdu-switch", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-016",
+    "vnfInstanceName": "vht-hlr-db",
+    "vnfInstanceDescription": "Home Location Register",
+    "vnfdId": "vnfd-hlr-016",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-hlr",
+    "vnfSoftwareVersion": "9.1.0",
+    "vnfdVersion": "9.1.0",
+    "vnfPkgId": "pkg-hlr-016",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "premium",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1601", "vduId": "vdu-db", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-017",
+    "vnfInstanceName": "vht-sgw-user",
+    "vnfInstanceDescription": "Serving Gateway User Plane",
+    "vnfdId": "vnfd-sgw-017",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-sgw",
+    "vnfSoftwareVersion": "4.5.2",
+    "vnfdVersion": "4.5.2",
+    "vnfPkgId": "pkg-sgw-017",
+    "vimId": "vim-002",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "high-performance",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1701", "vduId": "vdu-gw", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-018",
+    "vnfInstanceName": "vht-pgw-control",
+    "vnfInstanceDescription": "PDN Gateway Control Plane",
+    "vnfdId": "vnfd-pgw-018",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-pgw",
+    "vnfSoftwareVersion": "4.6.0",
+    "vnfdVersion": "4.6.0",
+    "vnfPkgId": "pkg-pgw-018",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1801", "vduId": "vdu-ctrl", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-019",
+    "vnfInstanceName": "vht-sms-center",
+    "vnfInstanceDescription": "Short Message Service Center",
+    "vnfdId": "vnfd-smsc-019",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-smsc",
+    "vnfSoftwareVersion": "3.3.0",
+    "vnfdVersion": "3.3.0",
+    "vnfPkgId": "pkg-smsc-019",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-1901", "vduId": "vdu-msg", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  },
+  {
+    "id": "vnf-instance-020",
+    "vnfInstanceName": "vht-mme-control",
+    "vnfInstanceDescription": "Mobility Management Entity",
+    "vnfdId": "vnfd-mme-020",
+    "vnfProvider": "VHT",
+    "vnfProductName": "vht-mme",
+    "vnfSoftwareVersion": "6.1.1",
+    "vnfdVersion": "6.1.1",
+    "vnfPkgId": "pkg-mme-020",
+    "vimId": "vim-001",
+    "instantiationState": "INSTANTIATED",
+    "instantiatedVnfInfo": {
+      "flavourId": "standard",
+      "vnfState": "STARTED",
+      "vnfcInfo": [{ "id": "vnfc-2001", "vduId": "vdu-core", "vnfcState": "STARTED" }]
+    },
+    "operationalState": "STARTED"
+  }
+]

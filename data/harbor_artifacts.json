@@ -1,0 +1,68 @@
+{
+  "vht/vht-backend": [
+    {
+      "id": 101,
+      "tags": [{ "name": "1.2.3" }],
+      "push_time": "2026-05-15T08:00:00.000Z",
+      "size": 524288000,
+      "type": "IMAGE"
+    },
+    {
+      "id": 102,
+      "tags": [{ "name": "1.2.2" }],
+      "push_time": "2026-05-14T08:00:00.000Z",
+      "size": 524288000,
+      "type": "IMAGE"
+    },
+    {
+      "id": 103,
+      "tags": [{ "name": "1.2.1" }],
+      "push_time": "2026-05-10T08:00:00.000Z",
+      "size": 524288000,
+      "type": "IMAGE"
+    }
+  ],
+  "vht/vht-frontend": [
+    {
+      "id": 201,
+      "tags": [{ "name": "1.0.1" }],
+      "push_time": "2026-05-15T08:00:00.000Z",
+      "size": 209715200,
+      "type": "IMAGE"
+    },
+    {
+      "id": 202,
+      "tags": [{ "name": "1.0.0" }],
+      "push_time": "2026-05-13T08:00:00.000Z",
+      "size": 209715200,
+      "type": "IMAGE"
+    }
+  ],
+  "vht/vht-ims-core": [
+    {
+      "id": 301,
+      "tags": [{ "name": "2.1.0" }],
+      "push_time": "2026-05-15T08:00:00.000Z",
+      "size": 2147483648,
+      "type": "IMAGE"
+    }
+  ],
+  "vht/vht-upf-worker": [
+    {
+      "id": 401,
+      "tags": [{ "name": "3.0.1" }],
+      "push_time": "2026-05-15T08:00:00.000Z",
+      "size": 1073741824,
+      "type": "IMAGE"
+    }
+  ],
+  "vht/vht-hss-db": [
+    {
+      "id": 501,
+      "tags": [{ "name": "3.2.0" }],
+      "push_time": "2026-05-15T08:00:00.000Z",
+      "size": 4294967296,
+      "type": "IMAGE"
+    }
+  ]
+}

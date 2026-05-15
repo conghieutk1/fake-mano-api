@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "project_id": 1,
+    "name": "vht/vht-backend",
+    "artifact_count": 12,
+    "latestImage": {
+      "tags": [{ "name": "1.2.3" }],
+      "type": "IMAGE"
+    }
+  },
+  {
+    "id": 2,
+    "project_id": 1,
+    "name": "vht/vht-frontend",
+    "artifact_count": 8,
+    "latestImage": {
+      "tags": [{ "name": "1.0.1" }],
+      "type": "IMAGE"
+    }
+  },
+  {
+    "id": 3,
+    "project_id": 1,
+    "name": "vht/vht-ims-core",
+    "artifact_count": 5,
+    "latestImage": {
+      "tags": [{ "name": "2.1.0" }],
+      "type": "IMAGE"
+    }
+  },
+  {
+    "id": 4,
+    "project_id": 1,
+    "name": "vht/vht-upf-worker",
+    "artifact_count": 15,
+    "latestImage": {
+      "tags": [{ "name": "3.0.1" }],
+      "type": "IMAGE"
+    }
+  },
+  {
+    "id": 5,
+    "project_id": 1,
+    "name": "vht/vht-hss-db",
+    "artifact_count": 3,
+    "latestImage": {
+      "tags": [{ "name": "3.2.0" }],
+      "type": "IMAGE"
+    }
+  }
+]

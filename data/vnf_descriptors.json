@@ -1,0 +1,22 @@
+[
+  { "vnfdId": "vnfd-vht-001", "swImageDesc": [{ "swImage": "vht-backend" }, { "swImage": "vht-frontend" }] },
+  { "vnfdId": "vnfd-ims-002", "swImageDesc": [{ "swImage": "vht-ims-core" }] },
+  { "vnfdId": "vnfd-upf-003", "swImageDesc": [{ "swImage": "vht-upf-worker" }] },
+  { "vnfdId": "vnfd-hss-004", "swImageDesc": [{ "swImage": "vht-hss-db" }] },
+  { "vnfdId": "vnfd-smf-005", "swImageDesc": [{ "swImage": "vht-smf" }] },
+  { "vnfdId": "vnfd-amf-006", "swImageDesc": [{ "swImage": "vht-amf" }] },
+  { "vnfdId": "vnfd-udm-007", "swImageDesc": [{ "swImage": "vht-udm" }] },
+  { "vnfdId": "vnfd-ausf-008", "swImageDesc": [{ "swImage": "vht-ausf" }] },
+  { "vnfdId": "vnfd-nrf-009", "swImageDesc": [{ "swImage": "vht-nrf" }] },
+  { "vnfdId": "vnfd-pcf-010", "swImageDesc": [{ "swImage": "vht-pcf" }] },
+  { "vnfdId": "vnfd-billing-011", "swImageDesc": [{ "swImage": "vht-billing" }] },
+  { "vnfdId": "vnfd-ocs-012", "swImageDesc": [{ "swImage": "vht-ocs" }] },
+  { "vnfdId": "vnfd-pcrf-013", "swImageDesc": [{ "swImage": "vht-pcrf" }] },
+  { "vnfdId": "vnfd-dras-014", "swImageDesc": [{ "swImage": "vht-dras" }] },
+  { "vnfdId": "vnfd-msc-015", "swImageDesc": [{ "swImage": "vht-msc" }] },
+  { "vnfdId": "vnfd-hlr-016", "swImageDesc": [{ "swImage": "vht-hlr" }] },
+  { "vnfdId": "vnfd-sgw-017", "swImageDesc": [{ "swImage": "vht-sgw" }] },
+  { "vnfdId": "vnfd-pgw-018", "swImageDesc": [{ "swImage": "vht-pgw" }] },
+  { "vnfdId": "vnfd-smsc-019", "swImageDesc": [{ "swImage": "vht-smsc" }] },
+  { "vnfdId": "vnfd-mme-020", "swImageDesc": [{ "swImage": "vht-mme" }] }
+]

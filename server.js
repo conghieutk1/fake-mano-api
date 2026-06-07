@@ -83,11 +83,53 @@ app.get('/plugins/v1/harbor/projects/:projectName/repositories/all-artifacts', (
  * POST /users/auth
  */
 app.post('/users/auth', (req, res) => {
-  res.json({
-    "access_token": "fake-token-" + Math.random().toString(36).substring(7),
-    "token_type": "Bearer"
+  const authHeader = req.headers['authorization'] || '';
+  console.log(`[POST /users/auth] Authorization header received: ${authHeader}`);
+
+  if (authHeader.startsWith('Basic ')) {
+    const base64Credentials = authHeader.split(' ')[1];
+    const credentials = Buffer.from(base64Credentials, 'base64').toString('utf-8');
+    const [username, password] = credentials.split(':');
+    
+    console.log(`[POST /users/auth] Decoded credentials -> Username: "${username}", Password: "${password}"`);
+    
+    // Kiểm tra thông tin credential cụ thể
+    if (username === 'ocsadmin' && password === '123456a@A') {
+      const token = "fake-token-ocsadmin-secure-123456";
+      console.log(`[POST /users/auth] Authentication successful! Token: ${token}`);
+      return res.json({
+        "access_token": token,
+        "token_type": "Bearer"
+      });
+    } else {
+      console.warn(`[POST /users/auth] Auth FAILED for user: "${username}" with password: "${password}"`);
+      return res.status(401).json({
+        error: "Unauthorized",
+        message: "Invalid username or password for MANO authentication"
+      });
+    }
+  }
+
+  return res.status(400).json({
+    error: "Bad Request",
+    message: "Missing or invalid Basic Authentication header"
   });
 });
+
+// Middleware để xác thực Bearer Token gửi từ backend Java
+const checkBearerToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'] || '';
+  console.log(`[Auth Check] Path: ${req.path}, Authorization Header: "${authHeader}"`);
+  
+  if (!authHeader.startsWith('Bearer fake-token-ocsadmin-secure-123456')) {
+    console.warn(`[Auth Check FAILED] Path: ${req.path}. Invalid or missing Bearer token.`);
+    return res.status(401).json({
+      error: "Unauthorized",
+      message: "Missing or invalid Bearer token for MANO API access"
+    });
+  }
+  next();
+};
 
 /**
  * MANO images list
@@ -95,13 +137,49 @@ app.post('/users/auth', (req, res) => {
  * GET /plugins/v1/mano/images
  */
 const getImages = (req, res) => {
+  const { imageName, imageVersion } = req.query;
+  if (imageName && imageVersion) {
+    console.log(`[GET /vim/v1/images] Checking image duplication for: ${imageName}:${imageVersion} -> returning empty list`);
+    return res.json([]);
+  }
   res.json(manoImages);
 };
-app.get('/vim/v1/images', getImages);
-app.post('/vim/v1/images', (req, res) => {
-  res.status(201).json({ message: "Image created (fake)" });
+app.get('/vim/v1/images', checkBearerToken, getImages);
+
+app.post('/vim/v1/images', checkBearerToken, (req, res) => {
+  console.log('[POST /vim/v1/images] Creating image metadata:', req.body);
+  const fakeId = '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+  res.status(201).json({
+    id: fakeId,
+    imageId: fakeId,
+    message: "Image metadata created successfully (fake)"
+  });
 });
+
 app.get('/plugins/v1/mano/images', getImages);
+
+/**
+ * MANO Image Upload
+ * POST /vim/v1/images/upload
+ */
+app.post('/vim/v1/images/upload', checkBearerToken, (req, res) => {
+  const imageId = req.headers['id'];
+  const isUpdateRequest = req.headers['isupdaterequest'];
+  console.log(`[POST /vim/v1/images/upload] Target image ID: ${imageId}, isUpdateRequest: ${isUpdateRequest}`);
+
+  let byteCount = 0;
+  req.on('data', (chunk) => {
+    byteCount += chunk.length;
+  });
+
+  req.on('end', () => {
+    console.log(`[POST /vim/v1/images/upload] Successfully received upload payload. Size: ${byteCount} bytes.`);
+    res.json({
+      status: "success",
+      message: "Image package uploaded successfully (fake)"
+    });
+  });
+});
 
 /**
  * MANO configmap list

@@ -1,0 +1,348 @@
+{
+  "root": {
+    "repositories": [
+      {
+        "id": 101,
+        "project_id": 1,
+        "name": "vocs4.0-100m/ocs/charging-gw",
+        "artifact_count": 2,
+        "latestImage": {
+          "id": 1001,
+          "type": "IMAGE",
+          "push_time": "2026-07-30T09:00:00Z",
+          "tags": [{ "id": 1, "name": "4.5.19", "push_time": "2026-07-30T09:00:00Z" }]
+        }
+      },
+      {
+        "id": 102,
+        "project_id": 1,
+        "name": "vocs4.0-100m/config/rating-config",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 1002,
+          "type": "CONFIGMAP",
+          "push_time": "2026-07-29T08:00:00Z",
+          "tags": [{ "id": 2, "name": "2026.07.01", "push_time": "2026-07-29T08:00:00Z" }]
+        }
+      },
+      {
+        "id": 103,
+        "project_id": 1,
+        "name": "vocs4.0-100m/tosca/cnf-descriptor",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 1003,
+          "type": "TOSCA",
+          "push_time": "2026-07-28T07:00:00Z",
+          "tags": [{ "id": 3, "name": "1.0.0", "push_time": "2026-07-28T07:00:00Z" }]
+        }
+      },
+      {
+        "id": 104,
+        "project_id": 1,
+        "name": "vocs4.0-100m/packages/helm-addon",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 1004,
+          "type": "HELM_CHART",
+          "push_time": "2026-07-27T06:00:00Z",
+          "tags": [{ "id": 4, "name": "0.3.0", "push_time": "2026-07-27T06:00:00Z" }]
+        }
+      },
+      {
+        "id": 105,
+        "project_id": 1,
+        "name": "vocs4.0-100m/ocs/waiting-worker",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 1005,
+          "type": "IMAGE",
+          "push_time": "2026-07-26T05:00:00Z",
+          "tags": [{ "id": 5, "name": "9.9.9", "push_time": "2026-07-26T05:00:00Z" }]
+        }
+      }
+    ],
+    "artifacts": {
+      "ocs/charging-gw": [
+        {
+          "id": 1101,
+          "type": "IMAGE",
+          "push_time": "2026-07-30T09:00:00Z",
+          "tags": [{ "id": 11, "name": "4.5.19", "push_time": "2026-07-30T09:00:00Z" }]
+        },
+        {
+          "id": 1102,
+          "type": "IMAGE",
+          "push_time": "2026-07-25T09:00:00Z",
+          "tags": [{ "id": 12, "name": "4.5.18", "push_time": "2026-07-25T09:00:00Z" }]
+        }
+      ],
+      "config/rating-config": [
+        {
+          "id": 1201,
+          "type": "CONFIGMAP",
+          "push_time": "2026-07-29T08:00:00Z",
+          "tags": [{ "id": 21, "name": "2026.07.01", "push_time": "2026-07-29T08:00:00Z" }]
+        }
+      ],
+      "tosca/cnf-descriptor": [
+        {
+          "id": 1301,
+          "type": "TOSCA",
+          "push_time": "2026-07-28T07:00:00Z",
+          "tags": [{ "id": 31, "name": "1.0.0", "push_time": "2026-07-28T07:00:00Z" }]
+        }
+      ],
+      "packages/helm-addon": [
+        {
+          "id": 1401,
+          "type": "HELM_CHART",
+          "push_time": "2026-07-27T06:00:00Z",
+          "tags": [{ "id": 41, "name": "0.3.0", "push_time": "2026-07-27T06:00:00Z" }]
+        }
+      ],
+      "ocs/waiting-worker": [
+        {
+          "id": 1501,
+          "type": "IMAGE",
+          "push_time": "2026-07-26T05:00:00Z",
+          "tags": [{ "id": 51, "name": "9.9.9", "push_time": "2026-07-26T05:00:00Z" }]
+        }
+      ]
+    },
+    "manoImages": [],
+    "configMaps": [],
+    "cnfInstances": [],
+    "vnfdDescriptors": [],
+    "deploymentFlavours": {},
+    "containers": {}
+  },
+  "staging1": {
+    "repositories": [
+      {
+        "id": 201,
+        "project_id": 1,
+        "name": "vocs4.0-100m/ocs/charging-gw",
+        "artifact_count": 2,
+        "latestImage": {
+          "id": 2001,
+          "type": "IMAGE",
+          "push_time": "2026-07-30T09:00:00Z",
+          "tags": [
+            { "id": 101, "name": "old-tag", "push_time": "2026-07-30T09:00:00Z" },
+            { "id": 102, "name": "4.5.19", "push_time": "2026-07-30T09:00:00Z" }
+          ]
+        }
+      },
+      {
+        "id": 202,
+        "project_id": 1,
+        "name": "vocs4.0-100m/config/rating-config",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 2002,
+          "type": "CONFIGMAP",
+          "push_time": "2026-07-29T08:00:00Z",
+          "tags": [{ "id": 103, "name": "2026.07.01", "push_time": "2026-07-29T08:00:00Z" }]
+        }
+      },
+      {
+        "id": 203,
+        "project_id": 1,
+        "name": "vocs4.0-100m/tosca/cnf-descriptor",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 2003,
+          "type": "TOSCA",
+          "push_time": "2026-07-28T07:00:00Z",
+          "tags": [{ "id": 104, "name": "1.0.0", "push_time": "2026-07-28T07:00:00Z" }]
+        }
+      }
+    ],
+    "artifacts": {
+      "ocs/charging-gw": [
+        {
+          "id": 2101,
+          "type": "IMAGE",
+          "push_time": "2026-07-30T09:00:00Z",
+          "tags": [
+            { "id": 111, "name": "old-tag", "push_time": "2026-07-30T09:00:00Z" },
+            { "id": 112, "name": "4.5.19", "push_time": "2026-07-30T09:00:00Z" }
+          ]
+        },
+        {
+          "id": 2102,
+          "type": "IMAGE",
+          "push_time": "2026-07-25T09:00:00Z",
+          "tags": [{ "id": 113, "name": "4.5.18", "push_time": "2026-07-25T09:00:00Z" }]
+        }
+      ],
+      "config/rating-config": [
+        {
+          "id": 2201,
+          "type": "CONFIGMAP",
+          "push_time": "2026-07-29T08:00:00Z",
+          "tags": [{ "id": 121, "name": "2026.07.01", "push_time": "2026-07-29T08:00:00Z" }]
+        }
+      ],
+      "tosca/cnf-descriptor": [
+        {
+          "id": 2301,
+          "type": "TOSCA",
+          "push_time": "2026-07-28T07:00:00Z",
+          "tags": [{ "id": 131, "name": "1.0.0", "push_time": "2026-07-28T07:00:00Z" }]
+        }
+      ]
+    },
+    "manoImages": [
+      {
+        "id": "mano-stg1-1",
+        "name": "ocs/charging-gw",
+        "provider": "fake-mano",
+        "version": "4.5.19",
+        "createdAt": "2026-07-30T09:00:00.000Z",
+        "imageUsageStateType": "IN_USE",
+        "cnfInstances": [{ "vnfdId": "vnfd-charging-gw", "cnfName": "charging-gw-staging1" }]
+      },
+      {
+        "id": "mano-stg1-2",
+        "name": "config/rating-config",
+        "provider": "fake-mano",
+        "version": "2026.07.01",
+        "createdAt": "2026-07-30T09:00:00.000Z",
+        "imageUsageStateType": "NOT_IN_USE",
+        "cnfInstances": []
+      }
+    ],
+    "configMaps": [],
+    "cnfInstances": [
+      { "vnfInstanceName": "charging-gw-staging1", "vnfdId": "vnfd-charging-gw" }
+    ],
+    "vnfdDescriptors": [
+      {
+        "vnfdId": "vnfd-charging-gw",
+        "swImageDesc": [{ "swImage": "ocs/charging-gw:4.5.19" }]
+      }
+    ],
+    "deploymentFlavours": {
+      "vnfd-charging-gw": {
+        "deploymentFlavourId": "df-default",
+        "vduInfos": [
+          {
+            "vdu": {
+              "vduId": "vdu-main",
+              "name": "vdu-main",
+              "description": "Main VDU",
+              "priority": 1
+            },
+            "imageInfos": [
+              { "id": "image-main", "name": "ocs/charging-gw", "version": "4.5.19" }
+            ]
+          }
+        ]
+      }
+    },
+    "containers": {
+      "vnfd-charging-gw": {
+        "df-default": {
+          "vdu-main": [
+            {
+              "osContainerDescId": "container-main",
+              "extendedResourceRequests": [
+                { "deploymentType": "StatefulSet", "configMaps": [] }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "staging2": {
+    "repositories": [
+      {
+        "id": 301,
+        "project_id": 1,
+        "name": "vocs4.0-100m/config/rating-config",
+        "artifact_count": 1,
+        "latestImage": {
+          "id": 3001,
+          "type": "CONFIGMAP",
+          "push_time": "2026-07-29T08:30:00Z",
+          "tags": [{ "id": 201, "name": "2026.07.01", "push_time": "2026-07-29T08:30:00Z" }]
+        }
+      }
+    ],
+    "artifacts": {
+      "config/rating-config": [
+        {
+          "id": 3201,
+          "type": "CONFIGMAP",
+          "push_time": "2026-07-29T08:30:00Z",
+          "tags": [{ "id": 211, "name": "2026.07.01", "push_time": "2026-07-29T08:30:00Z" }]
+        }
+      ]
+    },
+    "manoImages": [
+      {
+        "id": "mano-stg2-1",
+        "name": "ocs/charging-gw",
+        "provider": "fake-mano",
+        "version": "4.5.19",
+        "createdAt": "2026-07-30T09:00:00.000Z",
+        "imageUsageStateType": "NOT_IN_USE",
+        "cnfInstances": []
+      },
+      {
+        "id": "mano-stg2-2",
+        "name": "packages/helm-addon",
+        "provider": "fake-mano",
+        "version": "0.3.0",
+        "createdAt": "2026-07-30T09:00:00.000Z",
+        "imageUsageStateType": "IN_USE",
+        "cnfInstances": [{ "vnfdId": "vnfd-helm-addon", "cnfName": "helm-addon-staging2" }]
+      }
+    ],
+    "configMaps": [],
+    "cnfInstances": [
+      { "vnfInstanceName": "helm-addon-staging2", "vnfdId": "vnfd-helm-addon" }
+    ],
+    "vnfdDescriptors": [
+      {
+        "vnfdId": "vnfd-helm-addon",
+        "swImageDesc": [{ "swImage": "packages/helm-addon:0.3.0" }]
+      }
+    ],
+    "deploymentFlavours": {
+      "vnfd-helm-addon": {
+        "deploymentFlavourId": "df-default",
+        "vduInfos": [
+          {
+            "vdu": {
+              "vduId": "vdu-main",
+              "name": "vdu-main",
+              "description": "Main VDU",
+              "priority": 1
+            },
+            "imageInfos": [
+              { "id": "image-main", "name": "packages/helm-addon", "version": "0.3.0" }
+            ]
+          }
+        ]
+      }
+    },
+    "containers": {
+      "vnfd-helm-addon": {
+        "df-default": {
+          "vdu-main": [
+            {
+              "osContainerDescId": "container-main",
+              "extendedResourceRequests": [
+                { "deploymentType": "StatefulSet", "configMaps": [] }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

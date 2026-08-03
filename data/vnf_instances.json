@@ -1,385 +1,536 @@
 [
   {
-    "id": "vnf-instance-001",
-    "vnfInstanceName": "vht-vsm-production",
-    "vnfInstanceDescription": "VHT VSM Main Production Instance",
-    "vnfdId": "vnfd-vht-001",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-vsm",
-    "vnfSoftwareVersion": "1.2.3",
-    "vnfdVersion": "1.2.3",
-    "vnfPkgId": "pkg-vht-001",
-    "vimId": "vim-001",
+    "id": "e27170ee-a6d9-4830-88dc-bca29564e2a5",
+    "_id": "4000ede8-3983-4668-a774-653cde9f21cd",
+    "vnfInstanceName": "hla-ocs01-data01",
+    "vnfInstanceDescription": "hla-ocs01-data01",
+    "vnfdId": "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c",
+    "vnfdRawId": "a701ea54-bfad-4027-861e-d2340c5d3a19",
+    "vnfProvider": "OCS",
+    "vnfProductName": "data",
+    "vnfSoftwareVersion": null,
+    "vnfdVersion": "1.0.2",
+    "vnfPkgId": "pkg-data-1.0.2",
+    "vimId": "vim-hla",
+    "vimConnectionInfos": [
+      {
+        "vimId": "vim-hla",
+        "vimName": "hla-ocs01"
+      }
+    ],
     "instantiationState": "INSTANTIATED",
     "instantiatedVnfInfo": {
       "flavourId": "standard",
       "vnfState": "STARTED",
+      "scaleStatus": [],
+      "extcpInfo": [],
+      "extVirtualLinkInfo": null,
+      "vnfcResourceInfo": [],
       "vnfcInfo": [
-        { "id": "vnfc-001", "vduId": "vdu-backend", "vnfcState": "STARTED" },
-        { "id": "vnfc-002", "vduId": "vdu-frontend", "vnfcState": "STARTED" }
+        {
+          "id": "hla-ocs01-data01-vnfc-01",
+          "vduId": "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8",
+          "vduName": "recurring-online",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-02",
+          "vduId": "90992563-edd9-47d8-b8f3-0edad066d251",
+          "vduName": "cdr-import",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-03",
+          "vduId": "3a7e6400-9492-4620-ae42-c45f5e8932e0",
+          "vduName": "convert-cdr-offline",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-04",
+          "vduId": "856ba1ac-53a6-447b-bc1c-d26d4f6851f3",
+          "vduName": "cruise-control",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-05",
+          "vduId": "7e3944a0-e10b-4d71-982d-0cc935b7968a",
+          "vduName": "chp-data-gy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-06",
+          "vduId": "6600fc88-0d08-40be-9109-41b8075104e7",
+          "vduName": "pcp-data-n7",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-07",
+          "vduId": "f30b5687-836d-4eeb-9b7a-a40e271ce17a",
+          "vduName": "zookeeper",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-08",
+          "vduId": "ca4e89c1-b67d-4373-9716-d8a4301ec324",
+          "vduName": "query-handler",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-09",
+          "vduId": "b2c814ee-b94f-44c0-9042-8f211e34eeeb",
+          "vduName": "entity-operator",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-10",
+          "vduId": "75aee28a-8db5-4149-96ea-9b6ffd5b39c2",
+          "vduName": "abm",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-11",
+          "vduId": "b856a514-3098-4eaf-a512-87f36a110aad",
+          "vduName": "kafka-exporter",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-12",
+          "vduId": "6810d862-a5e5-4bf7-a32e-68e18676de6a",
+          "vduName": "event-gw",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-13",
+          "vduId": "59b4c08c-9096-4bae-a42f-0111e726c2f5",
+          "vduName": "event-maker",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-14",
+          "vduId": "000e8736-52fa-4602-863a-c49065059e53",
+          "vduName": "abnormal",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-15",
+          "vduId": "faa36932-786f-43ed-9547-d1598fcc869a",
+          "vduName": "event-policy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-16",
+          "vduId": "2d0f3aad-7c5c-4c3d-a998-893529b83c63",
+          "vduName": "kafka",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-17",
+          "vduId": "be53131a-f749-4b1c-8dbe-8dc1f41fa68b",
+          "vduName": "cdr-processor",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-18",
+          "vduId": "2de38193-5986-418c-91cf-8f9b4431a711",
+          "vduName": "pcp-data-gx",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-19",
+          "vduId": "b135b777-a0f1-451a-b7a6-57f79d8a4034",
+          "vduName": "cgw-data-gx",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-20",
+          "vduId": "4346f7ad-1900-43cb-9b3c-eafd4269f19b",
+          "vduName": "chp-data-n40",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-21",
+          "vduId": "30dfdf07-659f-46f6-a85a-96bd957468a6",
+          "vduName": "cgw-data-gy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-22",
+          "vduId": "7fb00333-44d9-4c6d-ab07-f56bc67668ec",
+          "vduName": "product-catalog-mobile",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-23",
+          "vduId": "eb27c398-94bd-4f25-8d87-6dd93e10b2c4",
+          "vduName": "service-test-agent",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-24",
+          "vduId": "6c3aa7ec-eb98-45ea-b039-1850d4f63b6c",
+          "vduName": "cgw-data-n7",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-25",
+          "vduId": "fbbc3c81-5468-4c12-9fe6-a1dcd88abfa8",
+          "vduName": "cgw-data-n40",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-26",
+          "vduId": "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8",
+          "vduName": "recurring-online",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-27",
+          "vduId": "90992563-edd9-47d8-b8f3-0edad066d251",
+          "vduName": "cdr-import",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-28",
+          "vduId": "3a7e6400-9492-4620-ae42-c45f5e8932e0",
+          "vduName": "convert-cdr-offline",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-29",
+          "vduId": "856ba1ac-53a6-447b-bc1c-d26d4f6851f3",
+          "vduName": "cruise-control",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hla-ocs01-data01-vnfc-30",
+          "vduId": "7e3944a0-e10b-4d71-982d-0cc935b7968a",
+          "vduName": "chp-data-gy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        }
       ]
     },
-    "operationalState": "STARTED"
+    "monitoredDataTemplates": [],
+    "useDefaultTemplateForMonitoring": true,
+    "userActions": [],
+    "tags": "",
+    "vnfType": "data",
+    "operationalState": "STARTED",
+    "totalVnfc": 30,
+    "totalErrorVnfc": 0,
+    "totalVdu": 25,
+    "totalRunningVnfc": 30,
+    "nsInstances": [],
+    "defaultViewKpis": []
   },
   {
-    "id": "vnf-instance-002",
-    "vnfInstanceName": "vht-ims-core",
-    "vnfInstanceDescription": "IP Multimedia Subsystem Core",
-    "vnfdId": "vnfd-ims-002",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-ims",
-    "vnfSoftwareVersion": "2.1.0",
-    "vnfdVersion": "2.1.0",
-    "vnfPkgId": "pkg-ims-002",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "premium",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-101", "vduId": "vdu-cscf", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-003",
-    "vnfInstanceName": "vht-upf-node-01",
-    "vnfInstanceDescription": "User Plane Function Node 01",
-    "vnfdId": "vnfd-upf-003",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-upf",
-    "vnfSoftwareVersion": "3.0.1",
-    "vnfdVersion": "3.0.0",
-    "vnfPkgId": "pkg-upf-003",
-    "vimId": "vim-002",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "high-performance",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-201", "vduId": "vdu-worker", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-004",
-    "vnfInstanceName": "vht-hss-v3",
-    "vnfInstanceDescription": "Home Subscriber Server v3",
-    "vnfdId": "vnfd-hss-004",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-hss",
-    "vnfSoftwareVersion": "3.2.0",
-    "vnfdVersion": "3.2.0",
-    "vnfPkgId": "pkg-hss-004",
-    "vimId": "vim-001",
+    "id": "7af0c7c2-a954-404e-9d02-6b0b3035ccef",
+    "_id": "6490b5fc-c87f-46ea-9fd1-9174ce85b24c",
+    "vnfInstanceName": "hht-ocs01-data01",
+    "vnfInstanceDescription": "hht-ocs01-data01",
+    "vnfdId": "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c",
+    "vnfdRawId": "a701ea54-bfad-4027-861e-d2340c5d3a19",
+    "vnfProvider": "OCS",
+    "vnfProductName": "data",
+    "vnfSoftwareVersion": null,
+    "vnfdVersion": "1.0.2",
+    "vnfPkgId": "pkg-data-1.0.2",
+    "vimId": "vim-hht",
+    "vimConnectionInfos": [
+      {
+        "vimId": "vim-hht",
+        "vimName": "hht-ocs01"
+      }
+    ],
     "instantiationState": "INSTANTIATED",
     "instantiatedVnfInfo": {
       "flavourId": "standard",
       "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-301", "vduId": "vdu-database", "vnfcState": "STARTED" }]
+      "scaleStatus": [],
+      "extcpInfo": [],
+      "extVirtualLinkInfo": null,
+      "vnfcResourceInfo": [],
+      "vnfcInfo": [
+        {
+          "id": "hht-ocs01-data01-vnfc-01",
+          "vduId": "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8",
+          "vduName": "recurring-online",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-02",
+          "vduId": "90992563-edd9-47d8-b8f3-0edad066d251",
+          "vduName": "cdr-import",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-03",
+          "vduId": "3a7e6400-9492-4620-ae42-c45f5e8932e0",
+          "vduName": "convert-cdr-offline",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-04",
+          "vduId": "856ba1ac-53a6-447b-bc1c-d26d4f6851f3",
+          "vduName": "cruise-control",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-05",
+          "vduId": "7e3944a0-e10b-4d71-982d-0cc935b7968a",
+          "vduName": "chp-data-gy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-06",
+          "vduId": "6600fc88-0d08-40be-9109-41b8075104e7",
+          "vduName": "pcp-data-n7",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-07",
+          "vduId": "f30b5687-836d-4eeb-9b7a-a40e271ce17a",
+          "vduName": "zookeeper",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-08",
+          "vduId": "ca4e89c1-b67d-4373-9716-d8a4301ec324",
+          "vduName": "query-handler",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-09",
+          "vduId": "b2c814ee-b94f-44c0-9042-8f211e34eeeb",
+          "vduName": "entity-operator",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-10",
+          "vduId": "75aee28a-8db5-4149-96ea-9b6ffd5b39c2",
+          "vduName": "abm",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-11",
+          "vduId": "b856a514-3098-4eaf-a512-87f36a110aad",
+          "vduName": "kafka-exporter",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-12",
+          "vduId": "6810d862-a5e5-4bf7-a32e-68e18676de6a",
+          "vduName": "event-gw",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-13",
+          "vduId": "59b4c08c-9096-4bae-a42f-0111e726c2f5",
+          "vduName": "event-maker",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-14",
+          "vduId": "000e8736-52fa-4602-863a-c49065059e53",
+          "vduName": "abnormal",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-15",
+          "vduId": "faa36932-786f-43ed-9547-d1598fcc869a",
+          "vduName": "event-policy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-16",
+          "vduId": "2d0f3aad-7c5c-4c3d-a998-893529b83c63",
+          "vduName": "kafka",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-17",
+          "vduId": "be53131a-f749-4b1c-8dbe-8dc1f41fa68b",
+          "vduName": "cdr-processor",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-18",
+          "vduId": "2de38193-5986-418c-91cf-8f9b4431a711",
+          "vduName": "pcp-data-gx",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-19",
+          "vduId": "b135b777-a0f1-451a-b7a6-57f79d8a4034",
+          "vduName": "cgw-data-gx",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-20",
+          "vduId": "4346f7ad-1900-43cb-9b3c-eafd4269f19b",
+          "vduName": "chp-data-n40",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-21",
+          "vduId": "30dfdf07-659f-46f6-a85a-96bd957468a6",
+          "vduName": "cgw-data-gy",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-22",
+          "vduId": "7fb00333-44d9-4c6d-ab07-f56bc67668ec",
+          "vduName": "product-catalog-mobile",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-23",
+          "vduId": "eb27c398-94bd-4f25-8d87-6dd93e10b2c4",
+          "vduName": "service-test-agent",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-24",
+          "vduId": "6c3aa7ec-eb98-45ea-b039-1850d4f63b6c",
+          "vduName": "cgw-data-n7",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-25",
+          "vduId": "fbbc3c81-5468-4c12-9fe6-a1dcd88abfa8",
+          "vduName": "cgw-data-n40",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-26",
+          "vduId": "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8",
+          "vduName": "recurring-online",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-27",
+          "vduId": "90992563-edd9-47d8-b8f3-0edad066d251",
+          "vduName": "cdr-import",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        },
+        {
+          "id": "hht-ocs01-data01-vnfc-28",
+          "vduId": "3a7e6400-9492-4620-ae42-c45f5e8932e0",
+          "vduName": "convert-cdr-offline",
+          "vnfcState": "STARTED",
+          "vnfcConfigurableProperty": {}
+        }
+      ]
     },
-    "operationalState": "STARTED"
+    "monitoredDataTemplates": [],
+    "useDefaultTemplateForMonitoring": true,
+    "userActions": [],
+    "tags": "",
+    "vnfType": "data",
+    "operationalState": "STARTED",
+    "totalVnfc": 30,
+    "totalErrorVnfc": 2,
+    "totalVdu": 25,
+    "totalRunningVnfc": 28,
+    "nsInstances": [],
+    "defaultViewKpis": []
   },
   {
-    "id": "vnf-instance-005",
-    "vnfInstanceName": "vht-smf-5g-01",
-    "vnfInstanceDescription": "Session Management Function",
-    "vnfdId": "vnfd-smf-005",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-smf",
-    "vnfSoftwareVersion": "5.0.1",
-    "vnfdVersion": "5.0.1",
-    "vnfPkgId": "pkg-smf-005",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
+    "id": "3f328c50-5c4c-4c4b-9d1d-d738814d3f0d",
+    "_id": "d0ed63ea-e4ab-4712-bf43-7db5965f2ec1",
+    "vnfInstanceName": "hla-ocs01-data02",
+    "vnfInstanceDescription": "hla-ocs01-data02",
+    "vnfdId": "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c",
+    "vnfdRawId": "a701ea54-bfad-4027-861e-d2340c5d3a19",
+    "vnfProvider": "OCS",
+    "vnfProductName": "data",
+    "vnfSoftwareVersion": null,
+    "vnfdVersion": "1.0.2",
+    "vnfPkgId": "pkg-data-1.0.2",
+    "vimId": "vim-hla",
+    "vimConnectionInfos": [
+      {
+        "vimId": "vim-hla",
+        "vimName": "hla-ocs01"
+      }
+    ],
+    "instantiationState": "NOT_INSTANTIATED",
     "instantiatedVnfInfo": {
       "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-501", "vduId": "vdu-ctrl", "vnfcState": "STARTED" }]
+      "vnfState": "STOPPED",
+      "scaleStatus": [],
+      "extcpInfo": [],
+      "extVirtualLinkInfo": null,
+      "vnfcResourceInfo": [],
+      "vnfcInfo": []
     },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-006",
-    "vnfInstanceName": "vht-amf-5g-01",
-    "vnfInstanceDescription": "Access Management Function",
-    "vnfdId": "vnfd-amf-006",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-amf",
-    "vnfSoftwareVersion": "5.1.0",
-    "vnfdVersion": "5.1.0",
-    "vnfPkgId": "pkg-amf-006",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-601", "vduId": "vdu-main", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-007",
-    "vnfInstanceName": "vht-udm-5g-01",
-    "vnfInstanceDescription": "Unified Data Management",
-    "vnfdId": "vnfd-udm-007",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-udm",
-    "vnfSoftwareVersion": "4.2.0",
-    "vnfdVersion": "4.2.0",
-    "vnfPkgId": "pkg-udm-007",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "premium",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-701", "vduId": "vdu-db", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-008",
-    "vnfInstanceName": "vht-ausf-5g-01",
-    "vnfInstanceDescription": "Authentication Server Function",
-    "vnfdId": "vnfd-ausf-008",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-ausf",
-    "vnfSoftwareVersion": "1.1.2",
-    "vnfdVersion": "1.1.2",
-    "vnfPkgId": "pkg-ausf-008",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-801", "vduId": "vdu-auth", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-009",
-    "vnfInstanceName": "vht-nrf-5g-01",
-    "vnfInstanceDescription": "Network Repository Function",
-    "vnfdId": "vnfd-nrf-009",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-nrf",
-    "vnfSoftwareVersion": "2.0.0",
-    "vnfdVersion": "2.0.0",
-    "vnfPkgId": "pkg-nrf-009",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-901", "vduId": "vdu-registry", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-010",
-    "vnfInstanceName": "vht-pcf-5g-01",
-    "vnfInstanceDescription": "Policy Control Function",
-    "vnfdId": "vnfd-pcf-010",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-pcf",
-    "vnfSoftwareVersion": "3.1.5",
-    "vnfdVersion": "3.1.5",
-    "vnfPkgId": "pkg-pcf-010",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "premium",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1001", "vduId": "vdu-policy", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-011",
-    "vnfInstanceName": "vht-vpro-billing",
-    "vnfInstanceDescription": "VPRO Billing System",
-    "vnfdId": "vnfd-billing-011",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-vpro",
-    "vnfSoftwareVersion": "10.2.1",
-    "vnfdVersion": "10.2.0",
-    "vnfPkgId": "pkg-billing-011",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1101", "vduId": "vdu-app", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-012",
-    "vnfInstanceName": "vht-ocs-node-01",
-    "vnfInstanceDescription": "Online Charging System",
-    "vnfdId": "vnfd-ocs-012",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-ocs",
-    "vnfSoftwareVersion": "8.5.0",
-    "vnfdVersion": "8.5.0",
-    "vnfPkgId": "pkg-ocs-012",
-    "vimId": "vim-002",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "high-performance",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1201", "vduId": "vdu-engine", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-013",
-    "vnfInstanceName": "vht-pcrf-core",
-    "vnfInstanceDescription": "Policy and Charging Rules Function",
-    "vnfdId": "vnfd-pcrf-013",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-pcrf",
-    "vnfSoftwareVersion": "7.2.1",
-    "vnfdVersion": "7.2.1",
-    "vnfPkgId": "pkg-pcrf-013",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1301", "vduId": "vdu-ctrl", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-014",
-    "vnfInstanceName": "vht-dras-alert",
-    "vnfInstanceDescription": "Data Retention and Analysis System",
-    "vnfdId": "vnfd-dras-014",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-dras",
-    "vnfSoftwareVersion": "1.5.0",
-    "vnfdVersion": "1.5.0",
-    "vnfPkgId": "pkg-dras-014",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1401", "vduId": "vdu-analyzer", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-015",
-    "vnfInstanceName": "vht-msc-gateway",
-    "vnfInstanceDescription": "Mobile Switching Center Gateway",
-    "vnfdId": "vnfd-msc-015",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-msc",
-    "vnfSoftwareVersion": "12.0.0",
-    "vnfdVersion": "12.0.0",
-    "vnfPkgId": "pkg-msc-015",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1501", "vduId": "vdu-switch", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-016",
-    "vnfInstanceName": "vht-hlr-db",
-    "vnfInstanceDescription": "Home Location Register",
-    "vnfdId": "vnfd-hlr-016",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-hlr",
-    "vnfSoftwareVersion": "9.1.0",
-    "vnfdVersion": "9.1.0",
-    "vnfPkgId": "pkg-hlr-016",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "premium",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1601", "vduId": "vdu-db", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-017",
-    "vnfInstanceName": "vht-sgw-user",
-    "vnfInstanceDescription": "Serving Gateway User Plane",
-    "vnfdId": "vnfd-sgw-017",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-sgw",
-    "vnfSoftwareVersion": "4.5.2",
-    "vnfdVersion": "4.5.2",
-    "vnfPkgId": "pkg-sgw-017",
-    "vimId": "vim-002",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "high-performance",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1701", "vduId": "vdu-gw", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-018",
-    "vnfInstanceName": "vht-pgw-control",
-    "vnfInstanceDescription": "PDN Gateway Control Plane",
-    "vnfdId": "vnfd-pgw-018",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-pgw",
-    "vnfSoftwareVersion": "4.6.0",
-    "vnfdVersion": "4.6.0",
-    "vnfPkgId": "pkg-pgw-018",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1801", "vduId": "vdu-ctrl", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-019",
-    "vnfInstanceName": "vht-sms-center",
-    "vnfInstanceDescription": "Short Message Service Center",
-    "vnfdId": "vnfd-smsc-019",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-smsc",
-    "vnfSoftwareVersion": "3.3.0",
-    "vnfdVersion": "3.3.0",
-    "vnfPkgId": "pkg-smsc-019",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-1901", "vduId": "vdu-msg", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
-  },
-  {
-    "id": "vnf-instance-020",
-    "vnfInstanceName": "vht-mme-control",
-    "vnfInstanceDescription": "Mobility Management Entity",
-    "vnfdId": "vnfd-mme-020",
-    "vnfProvider": "VHT",
-    "vnfProductName": "vht-mme",
-    "vnfSoftwareVersion": "6.1.1",
-    "vnfdVersion": "6.1.1",
-    "vnfPkgId": "pkg-mme-020",
-    "vimId": "vim-001",
-    "instantiationState": "INSTANTIATED",
-    "instantiatedVnfInfo": {
-      "flavourId": "standard",
-      "vnfState": "STARTED",
-      "vnfcInfo": [{ "id": "vnfc-2001", "vduId": "vdu-core", "vnfcState": "STARTED" }]
-    },
-    "operationalState": "STARTED"
+    "monitoredDataTemplates": [],
+    "useDefaultTemplateForMonitoring": true,
+    "userActions": [],
+    "tags": "",
+    "vnfType": "data",
+    "operationalState": "STOPPED",
+    "totalVnfc": 30,
+    "totalErrorVnfc": 30,
+    "totalVdu": 25,
+    "totalRunningVnfc": 0,
+    "nsInstances": [],
+    "defaultViewKpis": []
   }
 ]

@@ -1,25 +1,2890 @@
 {
-  "vnfd-vht-001": {
-    "vdu-backend": [{ "osContainerDescId": "container-api", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "LOG_LEVEL": "DEBUG" }, "configMaps": [{ "name": "api-config", "mount_path": "/app/config", "version": "v1.0", "_ready_only": true }] }] }],
-    "vdu-frontend": [{ "osContainerDescId": "container-ui", "requestedCpuResource": 2, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "BACKEND_API": "http://api:3000" }, "configMaps": [{ "name": "ui-theme", "mount_path": "/app/dist/assets", "version": "v2", "_ready_only": false }] }] }]
-  },
-  "vnfd-ims-002": { "vdu-cscf": [{ "osContainerDescId": "container-cscf", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "SIP_PORT": "5060" }, "configMaps": [{ "name": "cscf-params", "mount_path": "/etc/cscf", "version": "v2.1", "_ready_only": true }] }] }] },
-  "vnfd-upf-003": { "vdu-worker": [{ "osContainerDescId": "container-upf", "requestedCpuResource": 16, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "DPDK": "true" }, "configMaps": [{ "name": "upf-dpdk-conf", "mount_path": "/opt/upf", "version": "v3", "_ready_only": false }] }] }] },
-  "vnfd-hss-004": { "vdu-database": [{ "osContainerDescId": "container-db", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "DB_NAME": "HSS" }, "configMaps": [{ "name": "hss-db-init", "mount_path": "/u01/scripts", "version": "v1.1", "_ready_only": false }] }] }] },
-  "vnfd-smf-005": { "vdu-ctrl": [{ "osContainerDescId": "container-smf", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "NODE_ID": "SMF-01" }, "configMaps": [] }] }] },
-  "vnfd-amf-006": { "vdu-main": [{ "osContainerDescId": "container-amf", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "NODE_ID": "AMF-01" }, "configMaps": [] }] }] },
-  "vnfd-udm-007": { "vdu-db": [{ "osContainerDescId": "container-udm", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "DB_MODE": "REPLICA" }, "configMaps": [] }] }] },
-  "vnfd-ausf-008": { "vdu-auth": [{ "osContainerDescId": "container-ausf", "requestedCpuResource": 2, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "AUTH_TYPE": "5G-AKA" }, "configMaps": [] }] }] },
-  "vnfd-nrf-009": { "vdu-registry": [{ "osContainerDescId": "container-nrf", "requestedCpuResource": 2, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "TTL": "3600" }, "configMaps": [] }] }] },
-  "vnfd-pcf-010": { "vdu-policy": [{ "osContainerDescId": "container-pcf", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "RULE_PATH": "/rules" }, "configMaps": [] }] }] },
-  "vnfd-billing-011": { "vdu-app": [{ "osContainerDescId": "container-billing", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "APP_ENV": "PROD" }, "configMaps": [] }] }] },
-  "vnfd-ocs-012": { "vdu-engine": [{ "osContainerDescId": "container-ocs", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "TPS": "10000" }, "configMaps": [] }] }] },
-  "vnfd-pcrf-013": { "vdu-ctrl": [{ "osContainerDescId": "container-pcrf", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "MODE": "ACTIVE" }, "configMaps": [] }] }] },
-  "vnfd-dras-014": { "vdu-analyzer": [{ "osContainerDescId": "container-dras", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "BATCH_SIZE": "100" }, "configMaps": [] }] }] },
-  "vnfd-msc-015": { "vdu-switch": [{ "osContainerDescId": "container-msc", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "TYPE": "GATEWAY" }, "configMaps": [] }] }] },
-  "vnfd-hlr-016": { "vdu-db": [{ "osContainerDescId": "container-hlr", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "DB": "SQLITE" }, "configMaps": [] }] }] },
-  "vnfd-sgw-017": { "vdu-gw": [{ "osContainerDescId": "container-sgw", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "PLANE": "USER" }, "configMaps": [] }] }] },
-  "vnfd-pgw-018": { "vdu-ctrl": [{ "osContainerDescId": "container-pgw", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "PLANE": "CONTROL" }, "configMaps": [] }] }] },
-  "vnfd-smsc-019": { "vdu-msg": [{ "osContainerDescId": "container-smsc", "requestedCpuResource": 4, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "RETRY": "3" }, "configMaps": [] }] }] },
-  "vnfd-mme-020": { "vdu-core": [{ "osContainerDescId": "container-mme", "requestedCpuResource": 8, "extendedResourceRequests": [{ "deploymentType": "DEPLOYMENT", "environments": { "MME_ID": "MME-01" }, "configMaps": [] }] }] }
+  "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c": {
+    "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8": [
+      {
+        "osContainerDescId": "6c607bfd-9590-42d1-900b-8ad1b8d6c6ff",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "CNF_TYPE": "offline",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "HEAP": "3276m"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "path": "/u01/ocs",
+                "sub_path_expr": "",
+                "mount_path": "/u01/ocs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-recurring-online-green",
+                "ipFamilies": [],
+                "name": "csde-recurring-online",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9021
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "securityContext": null,
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9021,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "recurring",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.4"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "15b74ebd-580c-496e-9d48-67c3bb5a6c00",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "90992563-edd9-47d8-b8f3-0edad066d251": [
+      {
+        "osContainerDescId": "03bb35ce-3372-4879-8b0e-3922c0a4f8ce",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "mount_path": "/u01/app/logs",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-cdr-import-green",
+                "ipFamilies": [],
+                "name": "csde-cdr-import",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9009
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-cdr-import-aero-green",
+                "ipFamilies": [],
+                "name": "csde-cdr-import-aero",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9009
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "service_type": "CLUSTER_IP",
+                "bonding_name": "app-mpbn",
+                "name": "csde-import",
+                "ports": [
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9009,
+                    "port": 9009,
+                    "name": "port9009",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": "None"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9009,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "cdr-import-hla",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0-info"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "5.1.0.0-cdr-import-hla"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/aerospike",
+                "name": "aerospike-connection-hla",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.0.6-encrypted-clickhouse"
+              }
+            ],
+            "virtualFunction": {
+              "intel[dot]com/app_mpbn_2": "1",
+              "intel[dot]com/app_mpbn_1": "1"
+            },
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "38438712-214a-468e-a426-b1a47baa8a34",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "3a7e6400-9492-4620-ae42-c45f5e8932e0": [
+      {
+        "osContainerDescId": "ec6d62bf-8e3a-418e-bd49-2c9b8d9c0ca9",
+        "requestedCpuResources": 101,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-convert-cdr-offline-green",
+                "ipFamilies": [],
+                "name": "csde-convert-cdr-offline",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9012
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "securityContext": null,
+            "ports": [
+              {
+                "containerPort": 9000,
+                "hostPort": 9001,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9012,
+                "hostPort": 9000,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [
+              "a"
+            ],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "convert-cdr-offline-data",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.0.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "6a404f56-00b3-4a8e-b774-f1ac41178a74",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "856ba1ac-53a6-447b-bc1c-d26d4f6851f3": [
+      {
+        "osContainerDescId": "52c8e4b4-90ae-4d94-962f-46054a8567fb",
+        "requestedCpuResources": 0,
+        "requestedMemoryResources": 0,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "deploymentType": "DEPLOYMENT",
+            "isMountLog": true,
+            "environments": {
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "configMaps": [],
+            "hostPaths": [
+              {
+                "mount_path": "/u02/data/proxy",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              }
+            ],
+            "virtualFunction": {},
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-cruise-control-green",
+                "ipFamilies": [],
+                "name": "csde-cruise-control",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9090
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9090,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "cpuResourceLimit": 0,
+        "memoryResourceLimit": 0,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "b5acb095-a86f-47da-a519-19888374a4a6",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "7e3944a0-e10b-4d71-982d-0cc935b7968a": [
+      {
+        "osContainerDescId": "d675d7e9-6026-4304-a923-eb22714c0178",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-chp-data-gy-green",
+                "ipFamilies": [],
+                "name": "csde-chp-data-gy",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9003
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "securityContext": null,
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9003,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "chp-data-gy",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.2-debug"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "55372ce1-0bd0-4df2-9003-e774d9b79515",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "6600fc88-0d08-40be-9109-41b8075104e7": [
+      {
+        "osContainerDescId": "4e9b4f19-6ebf-4827-9f99-00d13384e5e8",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-pcp-data-n7-green",
+                "ipFamilies": [],
+                "name": "csde-pcp-data-n7",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9004
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9004,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "pcp-data-n7",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.1-280726-debug"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "4d382654-66f7-4a94-87b3-9fd47ffcd344",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "f30b5687-836d-4eeb-9b7a-a40e271ce17a": [
+      {
+        "osContainerDescId": "8b38f1cb-a78f-4255-9037-b579e16f5112",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "deploymentType": "STATEFUL_SET",
+            "isMountLog": true,
+            "environments": {
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "configMaps": [
+              {
+                "mount_path": "/mnt/zookeeper-metrics",
+                "name": "zookeeper-metrics",
+                "version": "1.0"
+              }
+            ],
+            "hostPaths": [
+              {
+                "mount_path": "/u02/data/proxy",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              }
+            ],
+            "virtualFunction": {},
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-zookeeper-green",
+                "ipFamilies": [],
+                "name": "csde-zookeeper",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 2181
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 2181,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "952bfa74-b964-4768-8d77-77c111ffaa4d",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "ca4e89c1-b67d-4373-9716-d8a4301ec324": [
+      {
+        "osContainerDescId": "d129eb7f-d417-4841-b058-b8fa93f176fb",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-query-handler-green",
+                "ipFamilies": [],
+                "name": "csde-query-handler",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9019
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9019,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "query-handler",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.2"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "26167f9c-a5a5-4a2c-bd0d-a64723cecd39",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "b2c814ee-b94f-44c0-9042-8f211e34eeeb": [
+      {
+        "osContainerDescId": "9539196d-a46b-4763-8b87-f1e69966f1a1",
+        "requestedCpuResources": 0,
+        "requestedMemoryResources": 0,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "deploymentType": "DEPLOYMENT",
+            "isMountLog": true,
+            "environments": {
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "configMaps": [],
+            "hostPaths": [
+              {
+                "mount_path": "/u02/data/proxy",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              }
+            ],
+            "virtualFunction": {},
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-entity-operator-green",
+                "ipFamilies": [],
+                "name": "csde-entity-operator",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 8081
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 8081,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "cpuResourceLimit": 0,
+        "memoryResourceLimit": 0,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "885bb11f-0896-4ca8-9148-ec8310ba8d9b",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "75aee28a-8db5-4149-96ea-9b6ffd5b39c2": [
+      {
+        "osContainerDescId": "3f522b90-13bd-4a94-9824-2cb2da3764fb",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "AUTHEN_SERVICE_NAME": "csde-abm.hla-ocs01-data01",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-abm-green",
+                "ipFamilies": [],
+                "name": "csde-abm",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9006
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-abm-aero-green",
+                "ipFamilies": [],
+                "name": "csde-abm-aero",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9006
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "service_type": "NODE_PORT",
+                "name": "service-ext",
+                "ports": [
+                  {
+                    "target_port": 9006,
+                    "port": 9006,
+                    "name": "port9006",
+                    "node_port": 8631,
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9006,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "abm",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.8.1-cross5000"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "2ebab15d-9f0e-4e74-8168-c5b19fd13145",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "b856a514-3098-4eaf-a512-87f36a110aad": [
+      {
+        "osContainerDescId": "8c10f8d0-1d8c-48c1-9a96-dfff33cf2ebc",
+        "requestedCpuResources": 0,
+        "requestedMemoryResources": 0,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "deploymentType": "DEPLOYMENT",
+            "isMountLog": true,
+            "environments": {
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "configMaps": [],
+            "hostPaths": [
+              {
+                "mount_path": "/u02/data/proxy",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              }
+            ],
+            "virtualFunction": {},
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-kafka-exporter-green",
+                "ipFamilies": [],
+                "name": "csde-kafka-exporter",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 2181
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9094,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "cpuResourceLimit": 0,
+        "memoryResourceLimit": 0,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "e97f1210-bb16-47f2-95ca-12ab83f3d4f8",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "6810d862-a5e5-4bf7-a32e-68e18676de6a": [
+      {
+        "osContainerDescId": "420a64a8-ca9c-4e44-a030-945003cbcfb9",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-event-gw-green",
+                "ipFamilies": [],
+                "name": "csde-event-gw",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9013
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9013,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "event-gw-hla-ocs01",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.3.3"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "527c19d6-90ca-44e7-9d4a-ad771e946af2",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "59b4c08c-9096-4bae-a42f-0111e726c2f5": [
+      {
+        "osContainerDescId": "b9c9a026-b8ce-4bbd-bc70-aceb5ee1b09a",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "CNF_TYPE": "offline",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "HEAP": "3276m"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-event-maker-green",
+                "ipFamilies": [],
+                "name": "csde-event-maker",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9014
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9014,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "event-maker",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.3.4"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "37eea324-5a84-4c77-95a4-2932242f49eb",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "000e8736-52fa-4602-863a-c49065059e53": [
+      {
+        "osContainerDescId": "eeef88c8-510c-4f55-b6fb-6992cf5f98fd",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-abnormal-green",
+                "ipFamilies": [],
+                "name": "csde-abnormal",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9007
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9007,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "abnormal-data",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.4"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "15ced1ee-fbc3-4833-bc41-ecb03a258cad",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "faa36932-786f-43ed-9547-d1598fcc869a": [
+      {
+        "osContainerDescId": "fdf90768-188b-4585-b437-5eb32bfa5fb7",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "CNF_TYPE": "data",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "VIM_HA_NAME": "hla-ocs01",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "HEAP": "3276m"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-event-policy-green",
+                "ipFamilies": [],
+                "name": "csde-event-policy",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9015
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9015,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "event-policy",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.14-debug"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "5e4509fe-22e8-4b24-a8c0-a5e535632af4",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "2d0f3aad-7c5c-4c3d-a998-893529b83c63": [
+      {
+        "osContainerDescId": "218ba36f-fcae-4b98-87b1-8787f846bffe",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "deploymentType": "STATEFUL_SET",
+            "isMountLog": true,
+            "environments": {
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "configMaps": [
+              {
+                "mount_path": "/mnt/kafka-metrics",
+                "name": "kafka-metrics",
+                "version": "1.0"
+              }
+            ],
+            "hostPaths": [
+              {
+                "mount_path": "/u02/data/proxy",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              }
+            ],
+            "virtualFunction": {},
+            "services": [
+              {
+                "service_type": "CLUSTER_IP",
+                "name": "csde-kafka",
+                "ports": [
+                  {
+                    "target_port": 9092,
+                    "port": 9092,
+                    "name": "port9092",
+                    "protocal": "TCP"
+                  }
+                ],
+                "selector": {
+                  "app.kubernetes.io/name": "kafka"
+                },
+                "cluster_ip": "None"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9092,
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "ab1a127c-c265-4722-97ba-8045e0764820",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "be53131a-f749-4b1c-8dbe-8dc1f41fa68b": [
+      {
+        "osContainerDescId": "e47ee2ce-b773-48cd-8107-504512ae65c3",
+        "requestedCpuResources": 4000,
+        "requestedMemoryResources": 8192,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-cdr-processor-green",
+                "ipFamilies": [],
+                "name": "csde-cdr-processor",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9010
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "service_type": "CLUSTER_IP",
+                "bonding_name": "app-int",
+                "name": "csde-app-int",
+                "ports": [
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9010,
+                    "port": 9010,
+                    "name": "port9010",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": "None"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9010,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "cdr-processor",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.0.9-170626-nlrll-180626-rc5gj"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.1"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {
+              "intel[dot]com/app_int_2": "1",
+              "intel[dot]com/app_int_1": "1",
+              "intel[dot]com/app_mpbn_2": "1",
+              "intel[dot]com/app_mpbn_1": "1"
+            },
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 6000,
+        "memoryResourceLimit": 16384,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "798a4bd1-938e-475a-bd70-6dd9407595c4",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "2de38193-5986-418c-91cf-8f9b4431a711": [
+      {
+        "osContainerDescId": "e71b6cb2-0610-4c7f-a0dd-9e9c9e5bd6c4",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-pcp-data-gx-green",
+                "ipFamilies": [],
+                "name": "csde-pcp-data-gx",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9004
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9004,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "pcp-data-gx",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.2-debug"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "c9be1849-fb10-4045-8c40-9faff54d5fcf",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "b135b777-a0f1-451a-b7a6-57f79d8a4034": [
+      {
+        "osContainerDescId": "d874bd74-508d-4f01-9530-f12a7d6de07a",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-cgw-data-gx-green",
+                "ipFamilies": [],
+                "name": "csde-cgw-data-gx",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9002
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9102
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "green_name": "cgw-data-gx-nodeport-green",
+                "ipFamilies": [],
+                "name": "cgw-data-gx-nodeport",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9002
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9002,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9102,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "cgw-data-gx-hla-ocs01",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.0.0.2-debug"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "217d666f-d2e6-4330-a383-c2db4b2d6722",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "4346f7ad-1900-43cb-9b3c-eafd4269f19b": [
+      {
+        "osContainerDescId": "bb75c626-c753-4736-bee3-c81e83b5b234",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-chp-data-n40-green",
+                "ipFamilies": [],
+                "name": "csde-chp-data-n40",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9003
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9003,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "chp-data-n40",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.1"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "3400f78d-e6e8-497b-8ae6-db07d15c3acc",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "30dfdf07-659f-46f6-a85a-96bd957468a6": [
+      {
+        "osContainerDescId": "978ec869-194e-48e3-9734-13d55bca76ea",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "HEAP": "3276m",
+              "CNF_TYPE": "data",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "TZ": "Asia/Ho_Chi_Minh"
+            },
+            "hostPaths": [
+              {
+                "mount_path": "/u01/app/logs",
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "type": "DirectoryOrCreate"
+              },
+              {
+                "mount_path": "/u01/ocs",
+                "path": "/u01/ocs"
+              }
+            ],
+            "services": [
+              {
+                "cluster_ip": "None",
+                "green_name": "csde-cgw-data-gy-green",
+                "ipFamilies": [],
+                "name": "csde-cgw-data-gy",
+                "ports": [
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9000
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9002
+                  },
+                  {
+                    "green_node_port": 0,
+                    "node_port": 0,
+                    "target_port": 9102
+                  }
+                ],
+                "service_type": "CLUSTER_IP"
+              },
+              {
+                "service_type": "NODE_PORT",
+                "name": "cgw-data-gy-nodeport",
+                "ports": [
+                  {
+                    "target_port": 9002,
+                    "port": 9002,
+                    "name": "port9002",
+                    "node_port": 8002,
+                    "protocal": "TCP"
+                  }
+                ]
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9002,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9102,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "cgw-data-gy-hla-ocs01",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.0.0.3-offrarshare-17062026-01"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "virtualFunction": {},
+            "preStop": {
+              "command": [
+                "/bin/sh",
+                "-c",
+                "pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "53b08349-982f-44af-ac07-bcd8b5504784",
+        "bootData": null,
+        "virtualStorageDesc": [],
+        "monitoringParameters": [],
+        "additionalContainer": null
+      }
+    ],
+    "7fb00333-44d9-4c6d-ab07-f56bc67668ec": [
+      {
+        "osContainerDescId": "ff8477b9-dcb3-4cce-873e-fa086cf1f4ce",
+        "requestedCpuResources": 0,
+        "requestedMemoryResources": 0,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "isMountLog": true,
+            "environments": {
+              "CONFIG_ROOT_PATH_PROD_CAT": "../logs/data/",
+              "CNF_TYPE": "product-catalog",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "HEAP": "3276m"
+            },
+            "configMaps": [
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.5-product-cat"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/hibernate",
+                "name": "hibernate-mobile-hla",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.5-staging-2"
+              },
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "product-catalog-mobile-hla",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.4-staging-3"
+              }
+            ],
+            "securityContext": {
+              "capabilities": {
+                "add": [
+                  "NET_ADMIN",
+                  " SYS_TIME"
+                ]
+              }
+            },
+            "services": [
+              {
+                "service_type": "NODE_PORT",
+                "name": "service",
+                "ports": [
+                  {
+                    "target_port": 9017,
+                    "port": 9017,
+                    "name": "port9017",
+                    "node_port": 9017,
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              }
+            ],
+            "preStop": {
+              "command": [
+                "/bin/bash",
+                " -c",
+                " pgrep java|xargs kill"
+              ]
+            },
+            "ports": [
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              }
+            ],
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 0,
+        "memoryResourceLimit": 0,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "c00b9337-0e50-465b-9c0a-dc7d464c1e36",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "eb27c398-94bd-4f25-8d87-6dd93e10b2c4": [
+      {
+        "osContainerDescId": "fab74688-6216-47ff-80a0-3a27949b23a0",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "NETWORK_MODE": "proxy_via_lb",
+              "CNF_TYPE": "offline",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy",
+              "HEAP": "3072m"
+            },
+            "hostPaths": [
+              {
+                "path": "/u02/VNF",
+                "sub_path_expr": "",
+                "mount_path": "/u01/app/logs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              },
+              {
+                "path": "/u01/ocs",
+                "sub_path_expr": "",
+                "mount_path": "/u01/ocs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              }
+            ],
+            "services": [
+              {
+                "service_type": "NODE_PORT",
+                "name": "service-test-agent",
+                "ports": [
+                  {
+                    "target_port": 8202,
+                    "port": 8202,
+                    "name": "port8202",
+                    "node_port": 8202,
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              },
+              {
+                "service_type": "CLUSTER_IP",
+                "name": "csde-service-test-agent",
+                "ports": [
+                  {
+                    "target_port": 9090,
+                    "port": 9090,
+                    "name": "port9090",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 8202,
+                    "port": 8202,
+                    "name": "port8202",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": "None"
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9090,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 8202,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "service-test-agent-hla-ocs01",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.2.20"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4"
+              }
+            ],
+            "preStop": {
+              "command": [
+                "/bin/bash",
+                " -c",
+                " pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 1000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "aa3748e7-aca5-448f-bfe1-f61782ad2c61",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "6c3aa7ec-eb98-45ea-b039-1850d4f63b6c": [
+      {
+        "osContainerDescId": "892e2162-371e-43b0-bd01-0dd4478cab8f",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "CNF_TYPE": "data",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "HEAP": "3276m"
+            },
+            "hostPaths": [
+              {
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "mount_path": "/u01/app/logs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              },
+              {
+                "path": "/u01/ocs",
+                "sub_path_expr": "",
+                "mount_path": "/u01/ocs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              }
+            ],
+            "securityContext": null,
+            "services": [
+              {
+                "service_type": "CLUSTER_IP",
+                "name": "csde-cgw-data-n7",
+                "ports": [
+                  {
+                    "target_port": 9102,
+                    "port": 9102,
+                    "name": "port9102",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9002,
+                    "port": 9002,
+                    "name": "port9002",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              },
+              {
+                "service_type": "CLUSTER_IP",
+                "name": "cgw-data-n7-nodeport",
+                "ports": [
+                  {
+                    "target_port": 9102,
+                    "port": 9102,
+                    "name": "port9102",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9002,
+                    "port": 9002,
+                    "name": "port9002",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9102,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9002,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "cgw-data-n7-hla-ocs01",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.0.7-migrate-dem1-3668"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4-stag"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "preStop": {
+              "command": [
+                "/bin/bash",
+                " -c",
+                " pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "cc0600cb-c88a-481b-81f0-0cc1970796a9",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ],
+    "fbbc3c81-5468-4c12-9fe6-a1dcd88abfa8": [
+      {
+        "osContainerDescId": "874b13a7-036b-47c0-ae9a-55ec571f07b7",
+        "requestedCpuResources": 100,
+        "requestedMemoryResources": 1024,
+        "requestedEphemeralStorageResources": 0,
+        "extendedResourceRequests": [
+          {
+            "isMountLog": true,
+            "environments": {
+              "CNF_TYPE": "data",
+              "TZ": "Asia/Ho_Chi_Minh",
+              "CONFIG_ROOT_PATH": "/u01/ocs/file-policy/",
+              "HEAP": "3276m"
+            },
+            "hostPaths": [
+              {
+                "path": "/u02/VNF",
+                "sub_path_expr": "$(VNF_INSTANCE_NAME)/$(VNF_INSTANCE_ID)/$(VNFC_NAME)/$(VNFC_ID)",
+                "mount_path": "/u01/app/logs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              },
+              {
+                "path": "/u01/ocs",
+                "sub_path_expr": "",
+                "mount_path": "/u01/ocs",
+                "type": "DirectoryOrCreate",
+                "sub_path": ""
+              }
+            ],
+            "securityContext": null,
+            "services": [
+              {
+                "service_type": "CLUSTER_IP",
+                "name": "csde-cgw-data-n40",
+                "ports": [
+                  {
+                    "target_port": 9102,
+                    "port": 9102,
+                    "name": "port9102",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9002,
+                    "port": 9002,
+                    "name": "port9002",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              },
+              {
+                "service_type": "CLUSTER_IP",
+                "name": "cgw-data-n40-nodeport",
+                "ports": [
+                  {
+                    "target_port": 9102,
+                    "port": 9102,
+                    "name": "port9102",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9002,
+                    "port": 9002,
+                    "name": "port9002",
+                    "protocal": "TCP"
+                  },
+                  {
+                    "target_port": 9000,
+                    "port": 9000,
+                    "name": "port9000",
+                    "protocal": "TCP"
+                  }
+                ],
+                "cluster_ip": ""
+              }
+            ],
+            "ports": [
+              {
+                "containerPort": 9102,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9002,
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 9000,
+                "protocol": "TCP"
+              }
+            ],
+            "zones": [],
+            "nodeNames": [],
+            "args": [
+              "/setup/bootstrap.sh"
+            ],
+            "deploymentType": "DEPLOYMENT",
+            "configMaps": [
+              {
+                "mount_path": "/u01/app/etc/config",
+                "name": "cgw-data-n40-hla-ocs01",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.0.8-migrate-dem2-368"
+              },
+              {
+                "mount_path": "/u01/app/etc/connection/kafka",
+                "name": "kafka",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.0"
+              },
+              {
+                "mount_path": "/u01/app/etc/envshare",
+                "name": "env-share",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.5.1.4-stag"
+              },
+              {
+                "mount_path": "/setup",
+                "name": "bootstrap",
+                "sub_path": "",
+                "sub_path_expr": "",
+                "version": "4.6.0.7"
+              }
+            ],
+            "preStop": {
+              "command": [
+                "/bin/bash",
+                " -c",
+                " pgrep java|xargs kill"
+              ]
+            },
+            "commands": [
+              "/bin/bash"
+            ]
+          }
+        ],
+        "cpuResourceLimit": 4000,
+        "memoryResourceLimit": 4096,
+        "ephemeralStorageResourceLimit": 0,
+        "swImageDesc": "18e95dcb-c315-4e42-b7ee-a2bc7dbad5ab",
+        "bootData": null,
+        "virtualStorageDesc": null,
+        "monitoringParameters": null,
+        "additionalContainer": null
+      }
+    ]
+  }
 }

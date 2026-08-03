@@ -1,206 +1,782 @@
 {
-  "vnfd-vht-001": {
+  "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c": {
     "deploymentFlavourId": "standard",
+    "flavourId": "standard",
     "vduInfos": [
       {
-        "vdu": { "vduId": "vdu-backend", "name": "Backend VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-backend", "minNumberOfInstance": 1, "maxNumberOfInstance": 3 },
-        "imageInfos": [{ "id": "img-backend-v1", "name": "vht-backend", "version": "1.2.3" }]
+        "vdu": {
+          "vduId": "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8",
+          "name": "recurring-online",
+          "description": "vdu recurring-online",
+          "priority": 1,
+          "currentDeploymentName": "recurring-online-1784102891898",
+          "prevDeploymentName": "recurring-online-1783322729003",
+          "iniDeploymentName": "recurring-online",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "6c607bfd-9590-42d1-900b-8ad1b8d6c6ff"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "e3b8a2b7-6908-4ea5-8b03-b588c7444bd8",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 3,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 3
+        },
+        "imageInfos": [
+          {
+            "id": "15b74ebd-580c-496e-9d48-67c3bb5a6c00",
+            "name": "recurring-policy",
+            "version": "4.5.5-2-359-83df475c",
+            "swImage": "recurring-policy:4.5.5-2-359-83df475c"
+          }
+        ]
       },
       {
-        "vdu": { "vduId": "vdu-frontend", "name": "Frontend VDU", "priority": 2 },
-        "vduProfile": { "vduId": "vdu-frontend", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-frontend-v1", "name": "vht-frontend", "version": "1.0.1" }]
-      }
-    ]
-  },
-  "vnfd-ims-002": {
-    "deploymentFlavourId": "premium",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "90992563-edd9-47d8-b8f3-0edad066d251",
+          "name": "cdr-import",
+          "description": "vdu cdr-import",
+          "priority": 1,
+          "currentDeploymentName": "cdr-import",
+          "prevDeploymentName": "cdr-import",
+          "iniDeploymentName": "cdr-import",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "03bb35ce-3372-4879-8b0e-3922c0a4f8ce"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "90992563-edd9-47d8-b8f3-0edad066d251",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 4,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 4
+        },
+        "imageInfos": [
+          {
+            "id": "38438712-214a-468e-a426-b1a47baa8a34",
+            "name": "cdr-import",
+            "version": "4.5.7",
+            "swImage": "cdr-import:4.5.7"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-cscf", "name": "CSCF VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-cscf", "minNumberOfInstance": 2, "maxNumberOfInstance": 5 },
-        "imageInfos": [{ "id": "img-ims-core-v2", "name": "vht-ims-core", "version": "2.1.0" }]
-      }
-    ]
-  },
-  "vnfd-upf-003": {
-    "deploymentFlavourId": "high-performance",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "3a7e6400-9492-4620-ae42-c45f5e8932e0",
+          "name": "convert-cdr-offline",
+          "description": "vdu convert-cdr-offline",
+          "priority": 1,
+          "currentDeploymentName": "convert-cdr-offline",
+          "prevDeploymentName": "convert-cdr-offline",
+          "iniDeploymentName": "convert-cdr-offline",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "ec6d62bf-8e3a-418e-bd49-2c9b8d9c0ca9"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "3a7e6400-9492-4620-ae42-c45f5e8932e0",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 4,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 4
+        },
+        "imageInfos": [
+          {
+            "id": "6a404f56-00b3-4a8e-b774-f1ac41178a74",
+            "name": "convert-cdr-offline",
+            "version": "4.5.3-62-8331e734",
+            "swImage": "convert-cdr-offline:4.5.3-62-8331e734"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-worker", "name": "UPF Worker VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-worker", "minNumberOfInstance": 3, "maxNumberOfInstance": 10 },
-        "imageInfos": [{ "id": "img-upf-worker-v3", "name": "vht-upf-worker", "version": "3.0.1" }]
-      }
-    ]
-  },
-  "vnfd-hss-004": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "856ba1ac-53a6-447b-bc1c-d26d4f6851f3",
+          "name": "cruise-control",
+          "description": "vdu cruise-control",
+          "priority": 1,
+          "currentDeploymentName": "cruise-control",
+          "prevDeploymentName": "cruise-control",
+          "iniDeploymentName": "cruise-control",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "52c8e4b4-90ae-4d94-962f-46054a8567fb"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "856ba1ac-53a6-447b-bc1c-d26d4f6851f3",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 1,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 1
+        },
+        "imageInfos": [
+          {
+            "id": "b5acb095-a86f-47da-a519-19888374a4a6",
+            "name": "strimzi/kafka",
+            "version": "3.2.0",
+            "swImage": "strimzi/kafka:3.2.0"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-database", "name": "HSS Database VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-database", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-hss-db-v3", "name": "vht-hss-db", "version": "3.2.0" }]
-      }
-    ]
-  },
-  "vnfd-smf-005": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "7e3944a0-e10b-4d71-982d-0cc935b7968a",
+          "name": "chp-data-gy",
+          "description": "vdu chp-data-gy",
+          "priority": 1,
+          "currentDeploymentName": "chp-data-gy-1784867954531",
+          "prevDeploymentName": "chp-data-gy-1784866635394",
+          "iniDeploymentName": "chp-data-gy",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "d675d7e9-6026-4304-a923-eb22714c0178"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "7e3944a0-e10b-4d71-982d-0cc935b7968a",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 22,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 22
+        },
+        "imageInfos": [
+          {
+            "id": "55372ce1-0bd0-4df2-9003-e774d9b79515",
+            "name": "chp-gy",
+            "version": "4.5.8-293-b6b7e7a8",
+            "swImage": "chp-gy:4.5.8-293-b6b7e7a8"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-ctrl", "name": "Control Plane VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-ctrl", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-smf-v5", "name": "vht-smf", "version": "5.0.1" }]
-      }
-    ]
-  },
-  "vnfd-amf-006": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "6600fc88-0d08-40be-9109-41b8075104e7",
+          "name": "pcp-data-n7",
+          "description": "vdu pcp-data-n7",
+          "priority": 1,
+          "currentDeploymentName": "pcp-data-n7-1785211446597",
+          "prevDeploymentName": "pcp-data-n7",
+          "iniDeploymentName": "pcp-data-n7",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "4e9b4f19-6ebf-4827-9f99-00d13384e5e8"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "6600fc88-0d08-40be-9109-41b8075104e7",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 3,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 3
+        },
+        "imageInfos": [
+          {
+            "id": "4d382654-66f7-4a94-87b3-9fd47ffcd344",
+            "name": "pcp-smpolicy",
+            "version": "4.5.2",
+            "swImage": "pcp-smpolicy:4.5.2"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-main", "name": "AMF Main VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-main", "minNumberOfInstance": 2, "maxNumberOfInstance": 4 },
-        "imageInfos": [{ "id": "img-amf-v5", "name": "vht-amf", "version": "5.1.0" }]
-      }
-    ]
-  },
-  "vnfd-udm-007": {
-    "deploymentFlavourId": "premium",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "f30b5687-836d-4eeb-9b7a-a40e271ce17a",
+          "name": "zookeeper",
+          "description": "vdu zookeeper",
+          "priority": 1,
+          "currentDeploymentName": "zookeeper",
+          "prevDeploymentName": "zookeeper",
+          "iniDeploymentName": "zookeeper",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "8b38f1cb-a78f-4255-9037-b579e16f5112"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "f30b5687-836d-4eeb-9b7a-a40e271ce17a",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 7,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 7
+        },
+        "imageInfos": [
+          {
+            "id": "952bfa74-b964-4768-8d77-77c111ffaa4d",
+            "name": "strimzi/kafka",
+            "version": "3.2.0",
+            "swImage": "strimzi/kafka:3.2.0"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-db", "name": "UDM DB VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-db", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-udm-v4", "name": "vht-udm", "version": "4.2.0" }]
-      }
-    ]
-  },
-  "vnfd-ausf-008": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "ca4e89c1-b67d-4373-9716-d8a4301ec324",
+          "name": "query-handler",
+          "description": "vdu query-handler",
+          "priority": 1,
+          "currentDeploymentName": "query-handler",
+          "prevDeploymentName": "query-handler",
+          "iniDeploymentName": "query-handler",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "d129eb7f-d417-4841-b058-b8fa93f176fb"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "ca4e89c1-b67d-4373-9716-d8a4301ec324",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 4,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 4
+        },
+        "imageInfos": [
+          {
+            "id": "26167f9c-a5a5-4a2c-bd0d-a64723cecd39",
+            "name": "query-handler",
+            "version": "4.5.3",
+            "swImage": "query-handler:4.5.3"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-auth", "name": "Auth VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-auth", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-ausf-v1", "name": "vht-ausf", "version": "1.1.2" }]
-      }
-    ]
-  },
-  "vnfd-nrf-009": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "b2c814ee-b94f-44c0-9042-8f211e34eeeb",
+          "name": "entity-operator",
+          "description": "vdu entity-operator",
+          "priority": 1,
+          "currentDeploymentName": "entity-operator",
+          "prevDeploymentName": "entity-operator",
+          "iniDeploymentName": "entity-operator",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "9539196d-a46b-4763-8b87-f1e69966f1a1"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "b2c814ee-b94f-44c0-9042-8f211e34eeeb",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 1,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 1
+        },
+        "imageInfos": [
+          {
+            "id": "885bb11f-0896-4ca8-9148-ec8310ba8d9b",
+            "name": "strimzi/operator",
+            "version": "0.29.0",
+            "swImage": "strimzi/operator:0.29.0"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-registry", "name": "Registry VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-registry", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-nrf-v2", "name": "vht-nrf", "version": "2.0.0" }]
-      }
-    ]
-  },
-  "vnfd-pcf-010": {
-    "deploymentFlavourId": "premium",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "75aee28a-8db5-4149-96ea-9b6ffd5b39c2",
+          "name": "abm",
+          "description": "vdu abm",
+          "priority": 1,
+          "currentDeploymentName": "abm-1783535542107",
+          "prevDeploymentName": "abm-1783535542107",
+          "iniDeploymentName": "abm",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "3f522b90-13bd-4a94-9824-2cb2da3764fb"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "75aee28a-8db5-4149-96ea-9b6ffd5b39c2",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 2,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 2
+        },
+        "imageInfos": [
+          {
+            "id": "2ebab15d-9f0e-4e74-8168-c5b19fd13145",
+            "name": "abm",
+            "version": "4.5.23-5-6bdac211",
+            "swImage": "abm:4.5.23-5-6bdac211"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-policy", "name": "Policy Engine VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-policy", "minNumberOfInstance": 2, "maxNumberOfInstance": 6 },
-        "imageInfos": [{ "id": "img-pcf-v3", "name": "vht-pcf", "version": "3.1.5" }]
-      }
-    ]
-  },
-  "vnfd-billing-011": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "b856a514-3098-4eaf-a512-87f36a110aad",
+          "name": "kafka-exporter",
+          "description": "vdu kafka-exporter",
+          "priority": 1,
+          "currentDeploymentName": "kafka-exporter",
+          "prevDeploymentName": "kafka-exporter",
+          "iniDeploymentName": "kafka-exporter",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "8c10f8d0-1d8c-48c1-9a96-dfff33cf2ebc"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "b856a514-3098-4eaf-a512-87f36a110aad",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 1,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 1
+        },
+        "imageInfos": [
+          {
+            "id": "e97f1210-bb16-47f2-95ca-12ab83f3d4f8",
+            "name": "strimzi/kafka",
+            "version": "3.2.0",
+            "swImage": "strimzi/kafka:3.2.0"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-app", "name": "Billing App VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-app", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-billing-v10", "name": "vht-billing", "version": "10.2.1" }]
-      }
-    ]
-  },
-  "vnfd-ocs-012": {
-    "deploymentFlavourId": "high-performance",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "6810d862-a5e5-4bf7-a32e-68e18676de6a",
+          "name": "event-gw",
+          "description": "vdu event-gw",
+          "priority": 1,
+          "currentDeploymentName": "event-gw",
+          "prevDeploymentName": "event-gw",
+          "iniDeploymentName": "event-gw",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "420a64a8-ca9c-4e44-a030-945003cbcfb9"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "6810d862-a5e5-4bf7-a32e-68e18676de6a",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 3,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 3
+        },
+        "imageInfos": [
+          {
+            "id": "527c19d6-90ca-44e7-9d4a-ad771e946af2",
+            "name": "event-gw",
+            "version": "4.5.3-1",
+            "swImage": "event-gw:4.5.3-1"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-engine", "name": "OCS Engine VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-engine", "minNumberOfInstance": 4, "maxNumberOfInstance": 12 },
-        "imageInfos": [{ "id": "img-ocs-v8", "name": "vht-ocs", "version": "8.5.0" }]
-      }
-    ]
-  },
-  "vnfd-pcrf-013": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "59b4c08c-9096-4bae-a42f-0111e726c2f5",
+          "name": "event-maker",
+          "description": "vdu event-maker",
+          "priority": 1,
+          "currentDeploymentName": "event-maker-1784089478694",
+          "prevDeploymentName": "event-maker-1784026838164",
+          "iniDeploymentName": "event-maker",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "b9c9a026-b8ce-4bbd-bc70-aceb5ee1b09a"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "59b4c08c-9096-4bae-a42f-0111e726c2f5",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 3,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 3
+        },
+        "imageInfos": [
+          {
+            "id": "37eea324-5a84-4c77-95a4-2932242f49eb",
+            "name": "event-maker",
+            "version": "4.5.3-4-3-648e657f",
+            "swImage": "event-maker:4.5.3-4-3-648e657f"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-ctrl", "name": "PCRF Control VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-ctrl", "minNumberOfInstance": 1, "maxNumberOfInstance": 3 },
-        "imageInfos": [{ "id": "img-pcrf-v7", "name": "vht-pcrf", "version": "7.2.1" }]
-      }
-    ]
-  },
-  "vnfd-dras-014": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "000e8736-52fa-4602-863a-c49065059e53",
+          "name": "abnormal",
+          "description": "vdu abnormal",
+          "priority": 1,
+          "currentDeploymentName": "abnormal",
+          "prevDeploymentName": "abnormal-1783505581134",
+          "iniDeploymentName": "abnormal",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": false,
+          "osContainerDesc": [
+            "eeef88c8-510c-4f55-b6fb-6992cf5f98fd"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "000e8736-52fa-4602-863a-c49065059e53",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 8,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 8
+        },
+        "imageInfos": [
+          {
+            "id": "15ced1ee-fbc3-4833-bc41-ecb03a258cad",
+            "name": "abnormal",
+            "version": "4.5.1-118-e40c475d",
+            "swImage": "abnormal:4.5.1-118-e40c475d"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-analyzer", "name": "Analyzer VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-analyzer", "minNumberOfInstance": 1, "maxNumberOfInstance": 5 },
-        "imageInfos": [{ "id": "img-dras-v1", "name": "vht-dras", "version": "1.5.0" }]
-      }
-    ]
-  },
-  "vnfd-msc-015": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "faa36932-786f-43ed-9547-d1598fcc869a",
+          "name": "event-policy",
+          "description": "vdu event-policy",
+          "priority": 1,
+          "currentDeploymentName": "event-policy-1785141224158",
+          "prevDeploymentName": "event-policy-1785125449784",
+          "iniDeploymentName": "event-policy",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "fdf90768-188b-4585-b437-5eb32bfa5fb7"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "faa36932-786f-43ed-9547-d1598fcc869a",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 7,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 7
+        },
+        "imageInfos": [
+          {
+            "id": "5e4509fe-22e8-4b24-a8c0-a5e535632af4",
+            "name": "event-policy",
+            "version": "4.5.3-8-2-7f851c73",
+            "swImage": "event-policy:4.5.3-8-2-7f851c73"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-switch", "name": "MSC Switch VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-switch", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-msc-v12", "name": "vht-msc", "version": "12.0.0" }]
-      }
-    ]
-  },
-  "vnfd-hlr-016": {
-    "deploymentFlavourId": "premium",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "2d0f3aad-7c5c-4c3d-a998-893529b83c63",
+          "name": "kafka",
+          "description": "vdu kafka",
+          "priority": 1,
+          "currentDeploymentName": "kafka",
+          "prevDeploymentName": "kafka",
+          "iniDeploymentName": "kafka",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "218ba36f-fcae-4b98-87b1-8787f846bffe"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "2d0f3aad-7c5c-4c3d-a998-893529b83c63",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 5,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 5
+        },
+        "imageInfos": [
+          {
+            "id": "ab1a127c-c265-4722-97ba-8045e0764820",
+            "name": "strimzi/kafka",
+            "version": "3.2.0",
+            "swImage": "strimzi/kafka:3.2.0"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-db", "name": "HLR DB VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-db", "minNumberOfInstance": 1, "maxNumberOfInstance": 2 },
-        "imageInfos": [{ "id": "img-hlr-v9", "name": "vht-hlr", "version": "9.1.0" }]
-      }
-    ]
-  },
-  "vnfd-sgw-017": {
-    "deploymentFlavourId": "high-performance",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "be53131a-f749-4b1c-8dbe-8dc1f41fa68b",
+          "name": "cdr-processor",
+          "description": "vdu cdr-processor",
+          "priority": 1,
+          "currentDeploymentName": "cdr-processor-1784632853821",
+          "prevDeploymentName": "cdr-processor",
+          "iniDeploymentName": "cdr-processor",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "e47ee2ce-b773-48cd-8107-504512ae65c3"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "be53131a-f749-4b1c-8dbe-8dc1f41fa68b",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 4,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 4
+        },
+        "imageInfos": [
+          {
+            "id": "798a4bd1-938e-475a-bd70-6dd9407595c4",
+            "name": "cdrgen",
+            "version": "4.5.16-SNAPSHOT-675-25dccd12",
+            "swImage": "cdrgen:4.5.16-SNAPSHOT-675-25dccd12"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-gw", "name": "SGW Gateway VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-gw", "minNumberOfInstance": 2, "maxNumberOfInstance": 8 },
-        "imageInfos": [{ "id": "img-sgw-v4", "name": "vht-sgw", "version": "4.5.2" }]
-      }
-    ]
-  },
-  "vnfd-pgw-018": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "2de38193-5986-418c-91cf-8f9b4431a711",
+          "name": "pcp-data-gx",
+          "description": "vdu pcp-data-gx",
+          "priority": 1,
+          "currentDeploymentName": "pcp-data-gx-1783918299819",
+          "prevDeploymentName": "pcp-data-gx",
+          "iniDeploymentName": "pcp-data-gx",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "e71b6cb2-0610-4c7f-a0dd-9e9c9e5bd6c4"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "2de38193-5986-418c-91cf-8f9b4431a711",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 22,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 22
+        },
+        "imageInfos": [
+          {
+            "id": "c9be1849-fb10-4045-8c40-9faff54d5fcf",
+            "name": "pcp-gx",
+            "version": "4.5.10-1-252-4777c6e2",
+            "swImage": "pcp-gx:4.5.10-1-252-4777c6e2"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-ctrl", "name": "PGW Control VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-ctrl", "minNumberOfInstance": 1, "maxNumberOfInstance": 3 },
-        "imageInfos": [{ "id": "img-pgw-v4", "name": "vht-pgw", "version": "4.6.0" }]
-      }
-    ]
-  },
-  "vnfd-smsc-019": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "b135b777-a0f1-451a-b7a6-57f79d8a4034",
+          "name": "cgw-data-gx",
+          "description": "vdu cgw-data-gx",
+          "priority": 1,
+          "currentDeploymentName": "cgw-data-gx",
+          "prevDeploymentName": "cgw-data-gx",
+          "iniDeploymentName": "cgw-data-gx",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "d874bd74-508d-4f01-9530-f12a7d6de07a"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "b135b777-a0f1-451a-b7a6-57f79d8a4034",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 12,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 12
+        },
+        "imageInfos": [
+          {
+            "id": "217d666f-d2e6-4330-a383-c2db4b2d6722",
+            "name": "diameter-cgw",
+            "version": "4.5.10-860-a0d361c2",
+            "swImage": "diameter-cgw:4.5.10-860-a0d361c2"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-msg", "name": "SMS Message VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-msg", "minNumberOfInstance": 1, "maxNumberOfInstance": 4 },
-        "imageInfos": [{ "id": "img-smsc-v3", "name": "vht-smsc", "version": "3.3.0" }]
-      }
-    ]
-  },
-  "vnfd-mme-020": {
-    "deploymentFlavourId": "standard",
-    "vduInfos": [
+        "vdu": {
+          "vduId": "4346f7ad-1900-43cb-9b3c-eafd4269f19b",
+          "name": "chp-data-n40",
+          "description": "vdu chp-data-n40",
+          "priority": 1,
+          "currentDeploymentName": "chp-data-n40-1783480835798",
+          "prevDeploymentName": "chp-data-n40-1783479923363",
+          "iniDeploymentName": "chp-data-n40",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "bb75c626-c753-4736-bee3-c81e83b5b234"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "4346f7ad-1900-43cb-9b3c-eafd4269f19b",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 3,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 3
+        },
+        "imageInfos": [
+          {
+            "id": "3400f78d-e6e8-497b-8ae6-db07d15c3acc",
+            "name": "chp-convergent",
+            "version": "4.5.2",
+            "swImage": "chp-convergent:4.5.2"
+          }
+        ]
+      },
       {
-        "vdu": { "vduId": "vdu-core", "name": "MME Core VDU", "priority": 1 },
-        "vduProfile": { "vduId": "vdu-core", "minNumberOfInstance": 2, "maxNumberOfInstance": 6 },
-        "imageInfos": [{ "id": "img-mme-v6", "name": "vht-mme", "version": "6.1.1" }]
+        "vdu": {
+          "vduId": "30dfdf07-659f-46f6-a85a-96bd957468a6",
+          "name": "cgw-data-gy",
+          "description": "vdu cgw-data-gy",
+          "priority": 1,
+          "currentDeploymentName": "cgw-data-gy",
+          "prevDeploymentName": "cgw-data-gy",
+          "iniDeploymentName": "cgw-data-gy",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "978ec869-194e-48e3-9734-13d55bca76ea"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "30dfdf07-659f-46f6-a85a-96bd957468a6",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 12,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 12
+        },
+        "imageInfos": [
+          {
+            "id": "53b08349-982f-44af-ac07-bcd8b5504784",
+            "name": "diameter-cgw",
+            "version": "4.5.10-860-a0d361c2",
+            "swImage": "diameter-cgw:4.5.10-860-a0d361c2"
+          }
+        ]
+      },
+      {
+        "vdu": {
+          "vduId": "7fb00333-44d9-4c6d-ab07-f56bc67668ec",
+          "name": "product-catalog-mobile",
+          "description": "1",
+          "priority": 1,
+          "currentDeploymentName": "product-catalog-mobile-1785211368918",
+          "prevDeploymentName": "product-catalog-mobile",
+          "iniDeploymentName": "product-catalog-mobile",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "ff8477b9-dcb3-4cce-873e-fa086cf1f4ce"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "7fb00333-44d9-4c6d-ab07-f56bc67668ec",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 10,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 10
+        },
+        "imageInfos": [
+          {
+            "id": "c00b9337-0e50-465b-9c0a-dc7d464c1e36",
+            "name": "product-catalog",
+            "version": "4.5.5-7-SNAPSHOT-101-bcac0654",
+            "swImage": "product-catalog:4.5.5-7-SNAPSHOT-101-bcac0654"
+          }
+        ]
+      },
+      {
+        "vdu": {
+          "vduId": "eb27c398-94bd-4f25-8d87-6dd93e10b2c4",
+          "name": "service-test-agent",
+          "description": "vdu service-test-agent",
+          "priority": 1,
+          "currentDeploymentName": "service-test-agent-1783397082631",
+          "prevDeploymentName": "service-test-agent-1783397082631",
+          "iniDeploymentName": "service-test-agent",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "fab74688-6216-47ff-80a0-3a27949b23a0"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "eb27c398-94bd-4f25-8d87-6dd93e10b2c4",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 2,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 2
+        },
+        "imageInfos": [
+          {
+            "id": "aa3748e7-aca5-448f-bfe1-f61782ad2c61",
+            "name": "test-agent",
+            "version": "4.5.2-99-f1af7132",
+            "swImage": "test-agent:4.5.2-99-f1af7132"
+          }
+        ]
+      },
+      {
+        "vdu": {
+          "vduId": "6c3aa7ec-eb98-45ea-b039-1850d4f63b6c",
+          "name": "cgw-data-n7",
+          "description": "cgw-data-n7",
+          "priority": 1,
+          "currentDeploymentName": "cgw-data-n7",
+          "prevDeploymentName": null,
+          "iniDeploymentName": "cgw-data-n7",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "892e2162-371e-43b0-bd01-0dd4478cab8f"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "6c3aa7ec-eb98-45ea-b039-1850d4f63b6c",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 2,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 2
+        },
+        "imageInfos": [
+          {
+            "id": "cc0600cb-c88a-481b-81f0-0cc1970796a9",
+            "name": "charging-restful-gw",
+            "version": "4.5.19",
+            "swImage": "charging-restful-gw:4.5.19"
+          }
+        ]
+      },
+      {
+        "vdu": {
+          "vduId": "fbbc3c81-5468-4c12-9fe6-a1dcd88abfa8",
+          "name": "cgw-data-n40",
+          "description": "cgw-data-n40",
+          "priority": 1,
+          "currentDeploymentName": "cgw-data-n40",
+          "prevDeploymentName": null,
+          "iniDeploymentName": "cgw-data-n40",
+          "healthStatus": "HEALTHY",
+          "isInstantiatedVdu": true,
+          "osContainerDesc": [
+            "874b13a7-036b-47c0-ae9a-55ec571f07b7"
+          ]
+        },
+        "vduProfile": {
+          "vduId": "fbbc3c81-5468-4c12-9fe6-a1dcd88abfa8",
+          "minNumberOfInstance": 1,
+          "maxNumberOfInstance": 2,
+          "minNumberOfInstances": 1,
+          "maxNumberOfInstances": 2
+        },
+        "imageInfos": [
+          {
+            "id": "18e95dcb-c315-4e42-b7ee-a2bc7dbad5ab",
+            "name": "charging-restful-gw",
+            "version": "4.5.19",
+            "swImage": "charging-restful-gw:4.5.19"
+          }
+        ]
       }
     ]
   }

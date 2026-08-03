@@ -1,22 +1,189 @@
 [
-  { "vnfdId": "vnfd-vht-001", "swImageDesc": [{ "swImage": "vht-backend" }, { "swImage": "vht-frontend" }] },
-  { "vnfdId": "vnfd-ims-002", "swImageDesc": [{ "swImage": "vht-ims-core" }] },
-  { "vnfdId": "vnfd-upf-003", "swImageDesc": [{ "swImage": "vht-upf-worker" }] },
-  { "vnfdId": "vnfd-hss-004", "swImageDesc": [{ "swImage": "vht-hss-db" }] },
-  { "vnfdId": "vnfd-smf-005", "swImageDesc": [{ "swImage": "vht-smf" }] },
-  { "vnfdId": "vnfd-amf-006", "swImageDesc": [{ "swImage": "vht-amf" }] },
-  { "vnfdId": "vnfd-udm-007", "swImageDesc": [{ "swImage": "vht-udm" }] },
-  { "vnfdId": "vnfd-ausf-008", "swImageDesc": [{ "swImage": "vht-ausf" }] },
-  { "vnfdId": "vnfd-nrf-009", "swImageDesc": [{ "swImage": "vht-nrf" }] },
-  { "vnfdId": "vnfd-pcf-010", "swImageDesc": [{ "swImage": "vht-pcf" }] },
-  { "vnfdId": "vnfd-billing-011", "swImageDesc": [{ "swImage": "vht-billing" }] },
-  { "vnfdId": "vnfd-ocs-012", "swImageDesc": [{ "swImage": "vht-ocs" }] },
-  { "vnfdId": "vnfd-pcrf-013", "swImageDesc": [{ "swImage": "vht-pcrf" }] },
-  { "vnfdId": "vnfd-dras-014", "swImageDesc": [{ "swImage": "vht-dras" }] },
-  { "vnfdId": "vnfd-msc-015", "swImageDesc": [{ "swImage": "vht-msc" }] },
-  { "vnfdId": "vnfd-hlr-016", "swImageDesc": [{ "swImage": "vht-hlr" }] },
-  { "vnfdId": "vnfd-sgw-017", "swImageDesc": [{ "swImage": "vht-sgw" }] },
-  { "vnfdId": "vnfd-pgw-018", "swImageDesc": [{ "swImage": "vht-pgw" }] },
-  { "vnfdId": "vnfd-smsc-019", "swImageDesc": [{ "swImage": "vht-smsc" }] },
-  { "vnfdId": "vnfd-mme-020", "swImageDesc": [{ "swImage": "vht-mme" }] }
+  {
+    "vnfdId": "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c",
+    "vnfProvider": "OCS",
+    "vnfProductName": "data",
+    "vnfdVersion": "1.0.2",
+    "deploymentFlavourId": "standard",
+    "vduCount": 25,
+    "osContainerDescCount": 25,
+    "swImageDescCount": 29,
+    "configMapCount": 82,
+    "swImageDesc": [
+      {
+        "_id": "53b08349-982f-44af-ac07-bcd8b5504784",
+        "name": "diameter-cgw",
+        "version": "4.5.10-860-a0d361c2",
+        "swImage": "diameter-cgw:4.5.10-860-a0d361c2"
+      },
+      {
+        "_id": "217d666f-d2e6-4330-a383-c2db4b2d6722",
+        "name": "diameter-cgw",
+        "version": "4.5.10-860-a0d361c2",
+        "swImage": "diameter-cgw:4.5.10-860-a0d361c2"
+      },
+      {
+        "_id": "83e63ba4-d47b-47af-b588-299b7bf43cb5",
+        "name": "charging-restful-gw",
+        "version": "4.5.19",
+        "swImage": "charging-restful-gw:4.5.19"
+      },
+      {
+        "_id": "dff71329-92e1-4436-8144-8b91a001a868",
+        "name": "charging-restful-gw",
+        "version": "4.5.19",
+        "swImage": "charging-restful-gw:4.5.19"
+      },
+      {
+        "_id": "55372ce1-0bd0-4df2-9003-e774d9b79515",
+        "name": "chp-gy",
+        "version": "4.5.8-293-b6b7e7a8",
+        "swImage": "chp-gy:4.5.8-293-b6b7e7a8"
+      },
+      {
+        "_id": "3400f78d-e6e8-497b-8ae6-db07d15c3acc",
+        "name": "chp-convergent",
+        "version": "4.5.2",
+        "swImage": "chp-convergent:4.5.2"
+      },
+      {
+        "_id": "c9be1849-fb10-4045-8c40-9faff54d5fcf",
+        "name": "pcp-gx",
+        "version": "4.5.10-1-252-4777c6e2",
+        "swImage": "pcp-gx:4.5.10-1-252-4777c6e2"
+      },
+      {
+        "_id": "4d382654-66f7-4a94-87b3-9fd47ffcd344",
+        "name": "pcp-smpolicy",
+        "version": "4.5.2",
+        "swImage": "pcp-smpolicy:4.5.2"
+      },
+      {
+        "_id": "2ebab15d-9f0e-4e74-8168-c5b19fd13145",
+        "name": "abm",
+        "version": "4.5.23-5-6bdac211",
+        "swImage": "abm:4.5.23-5-6bdac211"
+      },
+      {
+        "_id": "5e4509fe-22e8-4b24-a8c0-a5e535632af4",
+        "name": "event-policy",
+        "version": "4.5.3-8-2-7f851c73",
+        "swImage": "event-policy:4.5.3-8-2-7f851c73"
+      },
+      {
+        "_id": "15b74ebd-580c-496e-9d48-67c3bb5a6c00",
+        "name": "recurring-policy",
+        "version": "4.5.5-2-359-83df475c",
+        "swImage": "recurring-policy:4.5.5-2-359-83df475c"
+      },
+      {
+        "_id": "15ced1ee-fbc3-4833-bc41-ecb03a258cad",
+        "name": "abnormal",
+        "version": "4.5.1-118-e40c475d",
+        "swImage": "abnormal:4.5.1-118-e40c475d"
+      },
+      {
+        "_id": "798a4bd1-938e-475a-bd70-6dd9407595c4",
+        "name": "cdrgen",
+        "version": "4.5.16-SNAPSHOT-675-25dccd12",
+        "swImage": "cdrgen:4.5.16-SNAPSHOT-675-25dccd12"
+      },
+      {
+        "_id": "38438712-214a-468e-a426-b1a47baa8a34",
+        "name": "cdr-import",
+        "version": "4.5.7",
+        "swImage": "cdr-import:4.5.7"
+      },
+      {
+        "_id": "527c19d6-90ca-44e7-9d4a-ad771e946af2",
+        "name": "event-gw",
+        "version": "4.5.3-1",
+        "swImage": "event-gw:4.5.3-1"
+      },
+      {
+        "_id": "26167f9c-a5a5-4a2c-bd0d-a64723cecd39",
+        "name": "query-handler",
+        "version": "4.5.3",
+        "swImage": "query-handler:4.5.3"
+      },
+      {
+        "_id": "6a404f56-00b3-4a8e-b774-f1ac41178a74",
+        "name": "convert-cdr-offline",
+        "version": "4.5.3-62-8331e734",
+        "swImage": "convert-cdr-offline:4.5.3-62-8331e734"
+      },
+      {
+        "_id": "37eea324-5a84-4c77-95a4-2932242f49eb",
+        "name": "event-maker",
+        "version": "4.5.3-4-3-648e657f",
+        "swImage": "event-maker:4.5.3-4-3-648e657f"
+      },
+      {
+        "_id": "ab1a127c-c265-4722-97ba-8045e0764820",
+        "name": "strimzi/kafka",
+        "version": "3.2.0",
+        "swImage": "strimzi/kafka:3.2.0"
+      },
+      {
+        "_id": "952bfa74-b964-4768-8d77-77c111ffaa4d",
+        "name": "strimzi/kafka",
+        "version": "3.2.0",
+        "swImage": "strimzi/kafka:3.2.0"
+      },
+      {
+        "_id": "885bb11f-0896-4ca8-9148-ec8310ba8d9b",
+        "name": "strimzi/operator",
+        "version": "0.29.0",
+        "swImage": "strimzi/operator:0.29.0"
+      },
+      {
+        "_id": "b5acb095-a86f-47da-a519-19888374a4a6",
+        "name": "strimzi/kafka",
+        "version": "3.2.0",
+        "swImage": "strimzi/kafka:3.2.0"
+      },
+      {
+        "_id": "e97f1210-bb16-47f2-95ca-12ab83f3d4f8",
+        "name": "strimzi/kafka",
+        "version": "3.2.0",
+        "swImage": "strimzi/kafka:3.2.0"
+      },
+      {
+        "_id": "c00b9337-0e50-465b-9c0a-dc7d464c1e36",
+        "name": "product-catalog",
+        "version": "4.5.5-7-SNAPSHOT-101-bcac0654",
+        "swImage": "product-catalog:4.5.5-7-SNAPSHOT-101-bcac0654"
+      },
+      {
+        "_id": "aa3748e7-aca5-448f-bfe1-f61782ad2c61",
+        "name": "test-agent",
+        "version": "4.5.2-99-f1af7132",
+        "swImage": "test-agent:4.5.2-99-f1af7132"
+      },
+      {
+        "_id": "c57b7643-6b15-4b3f-b1be-7396246ba3b4",
+        "name": "abm",
+        "version": "4.0.92.4-14-24cff509",
+        "swImage": "abm:4.0.92.4-14-24cff509"
+      },
+      {
+        "_id": "1d7ded44-ae95-4641-be75-54738492ab5d",
+        "name": "custhist",
+        "version": "4.0.20",
+        "swImage": "custhist:4.0.20"
+      },
+      {
+        "_id": "cc0600cb-c88a-481b-81f0-0cc1970796a9",
+        "name": "charging-restful-gw",
+        "version": "4.5.19",
+        "swImage": "charging-restful-gw:4.5.19"
+      },
+      {
+        "_id": "18e95dcb-c315-4e42-b7ee-a2bc7dbad5ab",
+        "name": "charging-restful-gw",
+        "version": "4.5.19",
+        "swImage": "charging-restful-gw:4.5.19"
+      }
+    ]
+  }
 ]

@@ -16,8 +16,10 @@ const vduContainers = require('./data/vdu_containers.json');
 const manoImages = require('./data/mano_images.json');
 const manoConfigmaps = require('./data/mano_configmaps.json');
 const vnfDescriptors = require('./data/vnf_descriptors.json');
+const fullVnfDescriptors = require('./data/full_vnf_descriptors.json');
 const harborRepositories = require('./data/harbor_repositories.json');
 const harborArtifacts = require('./data/harbor_artifacts.json');
+const delopsFixtures = require('./data/delops_fixtures.json');
 
 // --- Routes ---
 
@@ -159,6 +161,137 @@ app.post('/vim/v1/images', checkBearerToken, (req, res) => {
 app.get('/plugins/v1/mano/images', getImages);
 
 /**
+ * DelOps agent fake profile endpoints
+ *
+ * These routes keep fake data outside devops-agent while exposing the same
+ * contract that agent status APIs use for each configured environment.
+ */
+const normalizeKey = (value) => (value || '').trim().toLowerCase();
+
+const decodeRepoName = (value) => {
+  let decoded = value || '';
+  for (let i = 0; i < 2; i += 1) {
+    try {
+      const next = decodeURIComponent(decoded);
+      if (next === decoded) break;
+      decoded = next;
+    } catch (err) {
+      break;
+    }
+  }
+  return decoded;
+};
+
+const getDelopsFixture = (env) => delopsFixtures[normalizeKey(env)] || delopsFixtures.root;
+
+const getRepositoryKey = (projectName, repositoryName) => {
+  const decoded = decodeRepoName(repositoryName);
+  const prefix = `${projectName}/`;
+  return decoded.startsWith(prefix) ? decoded.slice(prefix.length) : decoded;
+};
+
+const repositoriesForProject = (env, projectName) => {
+  const prefix = `${projectName}/`;
+  return (getDelopsFixture(env).repositories || []).filter((repo) => (repo.name || '').startsWith(prefix));
+};
+
+const artifactsForRepository = (env, projectName, repositoryName) => {
+  const repositoryKey = getRepositoryKey(projectName, repositoryName);
+  return getDelopsFixture(env).artifacts?.[repositoryKey] || [];
+};
+
+const deploymentFlavourForVnfd = (env, vnfdId) => {
+  return getDelopsFixture(env).deploymentFlavours?.[vnfdId] || {};
+};
+
+const containersForVdu = (env, vnfdId, dfId, vduId) => {
+  return getDelopsFixture(env).containers?.[vnfdId]?.[dfId]?.[vduId] || [];
+};
+
+app.get('/fake/:env/api/v2.0/ping', (req, res) => {
+  res.send('Pong');
+});
+
+app.get('/fake/:env/api/v2.0/users/current', (req, res) => {
+  res.json({
+    user_id: 1,
+    username: 'fake-delops',
+    email: 'fake-delops@example.com',
+    realname: 'Fake DelOps',
+    comment: 'Fake user for devops-agent profile',
+    admin_role: true
+  });
+});
+
+app.get('/fake/:env/api/v2.0/projects/:projectName/repositories', (req, res) => {
+  const { env, projectName } = req.params;
+  res.json(repositoriesForProject(env, projectName));
+});
+
+app.get('/fake/:env/api/v2.0/projects/:projectName/repositories/:repoName/artifacts', (req, res) => {
+  const { env, projectName, repoName } = req.params;
+  res.json(artifactsForRepository(env, projectName, repoName));
+});
+
+app.post('/fake/:env/users/auth', (req, res) => {
+  res.json({
+    access_token: 'fake-token-delops',
+    token_type: 'Bearer',
+    expires_in: 3600
+  });
+});
+
+app.get('/fake/:env/vim/v1/images', (req, res) => {
+  res.json(getDelopsFixture(req.params.env).manoImages || []);
+});
+
+app.get('/fake/:env/plugins/v1/mano/images', (req, res) => {
+  res.json(getDelopsFixture(req.params.env).manoImages || []);
+});
+
+app.get('/fake/:env/plugins/v1/harbor/projects/:projectName/root-repositories', (req, res) => {
+  const { projectName } = req.params;
+  res.json(repositoriesForProject('root', projectName));
+});
+
+app.get('/fake/:env/plugins/v1/harbor/projects/:projectName/all-repositories', (req, res) => {
+  const { env, projectName } = req.params;
+  res.json(repositoriesForProject(env, projectName));
+});
+
+app.get('/fake/:env/plugins/v1/harbor/projects/:projectName/repositories/root-artifacts', (req, res) => {
+  const { projectName } = req.params;
+  res.json(artifactsForRepository('root', projectName, req.query.repositoryName));
+});
+
+app.get('/fake/:env/plugins/v1/harbor/projects/:projectName/repositories/all-artifacts', (req, res) => {
+  const { env, projectName } = req.params;
+  res.json(artifactsForRepository(env, projectName, req.query.repositoryName));
+});
+
+app.get('/fake/:env/cm/v1/configInfos', (req, res) => {
+  res.json(getDelopsFixture(req.params.env).configMaps || []);
+});
+
+app.get('/fake/:env/cnflcm/v2/vnf_instances', (req, res) => {
+  res.json(getDelopsFixture(req.params.env).cnfInstances || []);
+});
+
+app.get('/fake/:env/cnfd-runtime/v1/vnf_descriptors', (req, res) => {
+  res.json(getDelopsFixture(req.params.env).vnfdDescriptors || []);
+});
+
+app.get('/fake/:env/cnfd-runtime/v1/vnf_descriptors/:vnfdId/deployment-flavours', (req, res) => {
+  const { env, vnfdId } = req.params;
+  res.json(deploymentFlavourForVnfd(env, vnfdId));
+});
+
+app.get('/fake/:env/cnfd-runtime/v1/vnf_descriptors/:vnfdId/deployment-flavours/:dfId/vdus/:vduId/containers', (req, res) => {
+  const { env, vnfdId, dfId, vduId } = req.params;
+  res.json(containersForVdu(env, vnfdId, dfId, vduId));
+});
+
+/**
  * MANO Image Upload
  * POST /vim/v1/images/upload
  */
@@ -198,12 +331,101 @@ app.get('/cnfd-runtime/v1/vnf_descriptors', (req, res) => {
 });
 
 /**
- * 7. Get Multi CNF Instance
- * GET /cnflcm/v1/vnf_instances
+ * MANO full VNF Descriptors list
+ * GET /cnfd-runtime/v1/full_vnf_descriptors
+ * GET /cnfd-runtime/v1/full_vnf_descriptors/
  */
-app.get('/cnflcm/v1/vnf_instances', (req, res) => {
-  res.json(vnfInstances);
+const getFullVnfDescriptors = (req, res) => {
+  const { vnfdId, vnfProductName, vnfdVersion } = req.query;
+  let result = fullVnfDescriptors;
+
+  if (vnfdId) {
+    result = result.filter((descriptor) => descriptor.vnfdId === vnfdId);
+  }
+
+  if (vnfProductName) {
+    result = result.filter((descriptor) => descriptor.vnfProductName === vnfProductName);
+  }
+
+  if (vnfdVersion) {
+    result = result.filter((descriptor) => descriptor.vnfdVersion === vnfdVersion);
+  }
+
+  res.json(result);
+};
+
+app.get('/cnfd-runtime/v1/full_vnf_descriptors', getFullVnfDescriptors);
+app.get('/cnfd-runtime/v1/full_vnf_descriptors/', getFullVnfDescriptors);
+
+/**
+ * MANO full VNF Descriptor detail
+ * GET /cnfd-runtime/v1/full_vnf_descriptors/:vnfdId
+ */
+app.get('/cnfd-runtime/v1/full_vnf_descriptors/:vnfdId', (req, res) => {
+  const { vnfdId } = req.params;
+  const descriptor = fullVnfDescriptors.find((item) => item.vnfdId === vnfdId);
+
+  if (!descriptor) {
+    return res.status(404).json({
+      message: `Not found any full Vnfd with id = ${vnfdId}`
+    });
+  }
+
+  res.json(descriptor);
 });
+
+/**
+ * 7. Get Multi CNF Instance
+ * GET /cnflcm/v2/vnf_instances
+ */
+const getVnfInstances = (req, res) => {
+  const { vnfInstanceName, vnfdId, vnfProductName, vnfdVersion, instantiationState } = req.query;
+  let result = vnfInstances;
+
+  if (vnfInstanceName) {
+    const keyword = vnfInstanceName.toLowerCase();
+    result = result.filter((instance) => (instance.vnfInstanceName || '').toLowerCase().includes(keyword));
+  }
+
+  if (vnfdId) {
+    result = result.filter((instance) => instance.vnfdId === vnfdId);
+  }
+
+  if (vnfProductName) {
+    result = result.filter((instance) => instance.vnfProductName === vnfProductName);
+  }
+
+  if (vnfdVersion) {
+    result = result.filter((instance) => instance.vnfdVersion === vnfdVersion);
+  }
+
+  if (instantiationState) {
+    result = result.filter((instance) => instance.instantiationState === instantiationState);
+  }
+
+  res.json(result);
+};
+
+app.get('/cnflcm/v2/vnf_instances', getVnfInstances);
+
+/**
+ * Get CNF Instance detail
+ * GET /cnflcm/v2/vnf_instances/:id
+ */
+const getVnfInstanceDetail = (req, res) => {
+  const { id } = req.params;
+  const instance = vnfInstances.find((item) => item.id === id || item._id === id || item.vnfInstanceName === id);
+
+  if (!instance) {
+    return res.status(404).json({
+      message: `Cannot find any vnf instance: ${id}`
+    });
+  }
+
+  res.json(instance);
+};
+
+app.get('/cnflcm/v2/vnf_instances/:id', getVnfInstanceDetail);
 
 /**
  * 4.1 Get danh sách DF
@@ -247,6 +469,10 @@ app.get('/', (req, res) => {
   res.send('Fake MANO & Harbor API is running!');
 });
 
-app.listen(port, () => {
-  console.log(`Fake API listening at http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Fake API listening at http://localhost:${port}`);
+  });
+}
+
+module.exports = app;

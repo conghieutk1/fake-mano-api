@@ -2,7 +2,7 @@
 
 7. Get Multi CNF Instance
 
-API: GET /cnflcm/v1/vnf_instances
+API: GET /cnflcm/v2/vnf_instances
 Mô tả:Lấy danh sách tất cả CNF Instance.
 
 Request Header:

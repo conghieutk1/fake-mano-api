@@ -201,7 +201,7 @@ const artifactsForRepository = (env, projectName, repositoryName) => {
 };
 
 const deploymentFlavourForVnfd = (env, vnfdId) => {
-  return getDelopsFixture(env).deploymentFlavours?.[vnfdId] || {};
+  return getDelopsFixture(env).deploymentFlavours?.[vnfdId] || [];
 };
 
 const containersForVdu = (env, vnfdId, dfId, vduId) => {

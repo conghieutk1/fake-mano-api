@@ -1,5 +1,6 @@
 {
-  "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c": {
+  "9b9a9f9d-ede1-4928-97e0-6e03fb4b9a5c": [
+    {
     "deploymentFlavourId": "standard",
     "flavourId": "standard",
     "vduInfos": [
@@ -779,5 +780,6 @@
         ]
       }
     ]
-  }
+    }
+  ]
 }
